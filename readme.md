@@ -32,7 +32,7 @@ flowchart LR
     D --> E[Cumplimiento Regulatorio<br/>GDPR, AI Act, ISO]
     E --> F[Quick Wins<br/>30 días]
     
-    style A fill:#ff6b6b
+    style A fill:#ff6b6b,color:#fff
     style F fill:#51cf66
 ```
 
@@ -139,7 +139,7 @@ graph TB
     I --> K
     
     style J fill:#ff9ff3
-    style K fill:#54a0ff
+    style K fill:#54a0ff,color:#fff
 ```
 
 - Data Lake, Data Mesh o Data Fabric (según matriz de decisión).
@@ -212,11 +212,11 @@ graph TB
     E3 --> F3
     
     style A1 fill:#4ecdc4,stroke:#2f3542,stroke-width:2px
-    style B1 fill:#ff9500,stroke:#2f3542,stroke-width:2px
-    style C1 fill:#ff6b6b,stroke:#2f3542,stroke-width:2px
-    style D1 fill:#5f27cd,stroke:#2f3542,stroke-width:2px
+    style B1 fill:#ff9500,stroke:#2f3542,stroke-width:2px,color:#fff
+    style C1 fill:#ff6b6b,stroke:#2f3542,stroke-width:2px,color:#fff
+    style D1 fill:#5f27cd,stroke:#2f3542,stroke-width:2px,color:#fff
     style E1 fill:#00d2d3,stroke:#2f3542,stroke-width:2px
-    style F1 fill:#ff9500,stroke:#2f3542,stroke-width:2px
+    style F1 fill:#ff9500,stroke:#2f3542,stroke-width:2px,color:#fff
 ```
 
 **Criterios de selección tecnológica SPHERED:**
@@ -446,8 +446,8 @@ flowchart TD
     E --> F[Customer 360°<br/>Employee 360°<br/>Product 360°]
     F --> G[AIOps<br/>Solución Automática]
     
-    style A fill:#ff6b6b
-    style D fill:#5f27cd
+    style A fill:#ff6b6b,color:#fff
+    style D fill:#5f27cd,stroke:#2f3542,stroke-width:2px,color:#fff
     style G fill:#51cf66
 ```
 
@@ -519,7 +519,7 @@ graph LR
     E --> A
     
     style A fill:#ff9ff3
-    style C fill:#54a0ff
+    style C fill:#54a0ff,color:#fff
     style E fill:#51cf66
 ```
 
@@ -729,7 +729,7 @@ graph LR
     C --> G
     C --> H
     
-    style A fill:#ff6b6b
+    style A fill:#ff6b6b,color:#fff
     style B fill:#4ecdc4
     style C fill:#51cf66
 ```
