@@ -2,7 +2,7 @@
 
 > **"Ahorra €100K en cloud, toma decisiones en minutos y cumple con la ley de IA — sin contratar un equipo de datos."**
 
-## 🎯 REALIDAD DEL MERCADO ESPAÑOL PME
+## REALIDAD DEL MERCADO ESPAÑOL PME
 
 **El problema silencioso que nadie quiere admitir:**
 - 67% de las PMEs españolas no confían en sus datos para decisiones críticas
@@ -20,74 +20,41 @@ El mercado de consultoría en datos crecerá 15% CAGR hasta 2030, pero el 85% es
 ### A. SPHERED HUB
 
 #### 1. SPHERED FOUNDATION
-**🚨 STOP perdiendo dinero en datos que no puedes usar.**
+**BASTA de perder dinero en datos que no puedes usar.**
 
 La base para convertir tus datos en tu ventaja competitiva más poderosa - en 30 días, no en años.
 
 ```mermaid
 flowchart LR
-    A[Diagnóstico de Madurez<br/>ROI Assessment] --> B[Diseño Arquitectura<br/>Moderno & Adaptativo]
+    A[Diagnóstico de Madurez<br/>Evaluación ROI] --> B[Diseño Arquitectura<br/>Moderno & Adaptativo]
     B --> C[Gobierno del Dato<br/>Roles, Políticas, Catálogo]
-    C --> D[Calidad de Datos<br/>Governance-as-Code]
+    C --> D[Calidad de Datos<br/>Gobierno-como-Código]
     D --> E[Cumplimiento Regulatorio<br/>GDPR, AI Act, ISO]
-    E --> F[Quick Wins<br/>30 días]
+    E --> F[Victorias Rápidas<br/>30 días]
     
     style A fill:#ff6b6b,color:#fff
     style F fill:#51cf66
 ```
 
-- Diagnóstico de madurez de datos y retorno potencial de inversión (ROI Assessment).
+- Diagnóstico de madurez de datos y retorno potencial de inversión (Evaluación ROI).
 - Diseño de arquitectura de datos moderna y adaptativa.
 - Gobierno del dato: roles, políticas, catálogo, linaje y contratos de datos.
-- Calidad de datos, metadatos y enfoque "Governance-as-Code".
+- Calidad de datos, metadatos y enfoque "Gobierno-como-Código".
 - Cumplimiento regulatorio (GDPR, AI Act, ISO, etc.).
-- Quick wins identificables en 30 días.
+- Victorias rápidas identificables en 30 días.
 
 **"Transformamos tus datos en activos auditables, trazables y confiables desde el primer día."**
 
 ```mermaid
 flowchart LR
-    subgraph "SPHERED FOUNDATION JOURNEY"
-        subgraph "ESTADO ACTUAL"
-            A[Datos No Confiables<br/>67% empresas no confían<br/>en sus datos]
-        end
-        
-        subgraph "DIAGNÓSTICO"
-            B[Diagnóstico de Madurez<br/>ROI Assessment<br/>Quick Wins Identificados]
-        end
-        
-        subgraph "ARQUITECTURA"
-            C[Diseño Arquitectura<br/>Moderno & Adaptativo<br/>Escalable]
-        end
-        
-        subgraph "GOBIERNO"
-            D[Gobierno del Dato<br/>Roles, Políticas, Catálogo<br/>Linaje y Contratos]
-        end
-        
-        subgraph "CALIDAD"
-            E[Calidad de Datos<br/>Governance-as-Code<br/>Metadatos Centralizados]
-        end
-        
-        subgraph "COMPLIANCE"
-            F[Cumplimiento Regulatorio<br/>GDPR, AI Act, ISO<br/>2025: 80% priorizan]
-        end
-        
-        subgraph "QUICK WINS"
-            G[Quick Wins<br/>30 días<br/>Tracción Inmediata]
-        end
-        
-        subgraph "ESTADO OBJETIVO"
-            H[Datos Confiables<br/>Auditables & Trazables<br/>Activo Empresarial]
-        end
-    end
-    
-    A --> B
-    B --> C
-    C --> D
-    D --> E
-    E --> F
-    F --> G
-    G --> H
+    A[ESTADO ACTUAL<br/>Datos No Confiables<br/>67% no confían] 
+    --> B[DIAGNÓSTICO<br/>Madurez + ROI<br/>Victorias Rápidas ID]
+    --> C[ARQUITECTURA<br/>Diseño Moderno<br/>Escalable]
+    --> D[GOBIERNO<br/>Políticas + Catálogo<br/>Roles definidos]
+    --> E[CALIDAD<br/>Gobierno-como-Código<br/>Metadatos centrales]
+    --> F[CUMPLIMIENTO<br/>GDPR + AI Act<br/>ISO listo]
+    --> G[VICTORIAS RÁPIDAS<br/>30 días<br/>Tracción inmediata]
+    --> H[OBJETIVO<br/>Datos Confiables<br/>Activo empresarial]
     
     style A fill:#ff4757,stroke:#2f3542,stroke-width:3px,color:#fff
     style B fill:#ffa502,stroke:#2f3542,stroke-width:2px,color:#fff
@@ -102,7 +69,7 @@ flowchart LR
 *Comentario estratégico: El diagnóstico de madurez es crítico - 67% de las empresas no confían en sus datos para tomar decisiones. Sugiero añadir "Assessment de ROI potencial" para justificar inversiones. La gestión de metadatos será central en 2025, con 80% de empresas priorizándola. Considera destacar "Quick wins identificables" en los primeros 30 días para generar tracción inmediata.*
 
 #### 2. SPHERED PLATFORM
-**⚡ Infraestructura que escala contigo - desde €5K hasta €50K sin rehacerlo.**
+**Infraestructura que escala contigo - desde €5K hasta €50K sin rehacerlo.**
 
 Arquitectura modular, FinOps integrado, ahorro garantizado del 25-40% en costes cloud desde el día 1.
 
@@ -151,13 +118,13 @@ graph TB
 
 **"Te ayudamos a decidir entre Mesh o Fabric según tus procesos, no según la moda."**
 
-### 🛠️ NUESTRO STACK TECNOLÓGICO BATTLE-TESTED
+### NUESTRO CONJUNTO TECNOLÓGICO PROBADO EN BATALLA
 
 **Después de 200+ implementaciones, estos son los jugadores con los que vamos:**
 
 ```mermaid
 graph TB
-    subgraph "SPHERED TECH STACK"
+    subgraph "CONJUNTO TECNOLÓGICO SPHERED"
         subgraph "Ingesta & ETL"
             A1[Airbyte - Open Source]
             A2[Fivetran - Enterprise]
@@ -183,7 +150,7 @@ graph TB
         end
         
         subgraph "Analytics & BI"
-            E1[Power BI - Microsoft Stack]
+            E1[Power BI - Conjunto Microsoft]
             E2[Looker - Google Native]
             E3[Tableau - Enterprise]
         end
@@ -221,7 +188,7 @@ graph TB
 
 **Criterios de selección tecnológica SPHERED:**
 
-🎯 **Tier 1 - Default Stack (80% casos):**
+**Nivel 1 - Conjunto Principal (80% casos):**
 - **Ingesta**: Airbyte (open source) + Fivetran (enterprise connectors)
 - **Storage**: AWS S3 (data lake) + Snowflake (analytics)
 - **Transform**: dbt Cloud (modeling) + Spark (heavy processing)
@@ -229,20 +196,20 @@ graph TB
 - **Analytics**: Power BI (Microsoft shops) / Looker (Google native)
 - **ML**: AWS SageMaker + MLflow + Hugging Face
 
-🔧 **Tier 2 - Casos Específicos:**
+**Nivel 2 - Casos Específicos:**
 - **BigQuery** cuando analytics >100TB diarios
 - **Databricks** cuando ML/IA son core business
 - **Tableau** para enterprises con inversión legacy
 - **Azure Synapse** solo en ecosistemas Microsoft puros
 
-⚠️ **Tecnologías que EVITAMOS y por qué:**
+**Tecnologías que EVITAMOS y por qué:**
 - **Palantir**: Over-engineering para PMEs, TCO prohibitivo
 - **Informatica**: Legacy, licenciamiento complejo
 - **Oracle Analytics**: Vendor lock-in agresivo
 - **IBM Watson**: Sunset mode, pocas actualizaciones
 - **Teradata**: On-premise legacy, no cloud-native
 
-**Nuestro principio: "Boring technology wins" - Stack maduro, comunidad activa, roadmap público.**
+**Nuestro principio: "La tecnología aburrida gana" - Conjunto maduro, comunidad activa, hoja de ruta pública.**
 
 *Comentario técnico: Esta transparencia tecnológica nos diferencia. Las PMEs quieren saber CON QUÉ van a trabajar, no promesas vagas. Especificamos tier 1 vs tier 2 para generar confianza y demostrar expertise real.*
 
@@ -252,7 +219,7 @@ graph TB
 
 Después de implementar +200 proyectos de datos, nuestra recomendación priorizada para PMEs españolas:
 
-#### 🥇 AWS - NUESTRA PRIMERA RECOMENDACIÓN
+#### AWS - NUESTRA PRIMERA RECOMENDACIÓN
 
 **¿Por qué AWS lidera nuestras implementaciones?**
 
@@ -305,7 +272,7 @@ graph TB
 - E-commerce con picos de demanda impredecibles
 - SaaS con modelos freemium que requieren elasticidad real
 
-#### 🥈 Google Cloud Platform - SEGUNDA OPCIÓN ESTRATÉGICA
+#### Google Cloud Platform - SEGUNDA OPCIÓN ESTRATÉGICA
 
 **¿Cuándo consideramos GCP?**
 
@@ -354,7 +321,7 @@ graph TB
 - Ya usas Google Workspace extensivamente
 - Tienes talento específico en Google Stack
 
-#### 🥉 Microsoft Azure - TERCERA OPCIÓN CONDICIONAL
+#### Microsoft Azure - TERCERA OPCIÓN CONDICIONAL
 
 **¿Por qué Azure es nuestra tercera recomendación?**
 
@@ -369,11 +336,11 @@ graph TB
     end
     
     subgraph "Pros vs Contras"
-        F[✅ Integración Office<br/>Ecosistema Microsoft]
-        G[✅ Hybrid Cloud<br/>On-premise bridge]
-        H[❌ Complexity<br/>Múltiples servicios overlapping]
-        I[❌ Pricing<br/>Menos transparente]
-        J[❌ Vendor Lock-in<br/>Más agresivo]
+        F[Integración Office<br/>Ecosistema Microsoft]
+        G[Nube Híbrida<br/>Puente On-premise]
+        H[Complejidad<br/>Múltiples servicios overlapping]
+        I[Precios<br/>Menos transparente]
+        J[Bloqueo de Proveedor<br/>Más agresivo]
     end
     
     A --> F
@@ -408,7 +375,7 @@ Databricks es excellent, pero recomendamos la versión AWS de Databricks sobre A
 - Networking más simple
 - Mejor performance en workloads mixtos
 
-#### 🎯 MATRIZ DE DECISIÓN SPHERED
+#### MATRIZ DE DECISIÓN SPHERED
 
 ```mermaid
 graph TB
@@ -433,7 +400,7 @@ graph TB
 *Comentario estratégico: Después de 200+ implementaciones, AWS demuestra el mejor TCO y time-to-value para PMEs españolas. GCP para casos específicos de analytics pesados. Azure solo cuando el ecosistema Microsoft es irrenunciable.*
 
 #### 3. SPHERED INTELLIGENCE
-**🧠 De "tengo muchos datos" a "sé exactamente qué hacer" en semanas.**
+**De "tengo muchos datos" a "sé exactamente qué hacer" en semanas.**
 
 Automatización de decisiones con IA responsable - porque el futuro no espera.
 
@@ -460,7 +427,7 @@ flowchart TD
 
 **"Pasamos de dashboards a decisiones automáticas en semanas, no en años."**
 
-### 💰 CASOS DE USO REALES CON ROI CUANTIFICADO
+### CASOS DE USO REALES CON ROI CUANTIFICADO
 
 **Dejemos de hablar en abstracto. Estos son resultados REALES de nuestros clientes:**
 
@@ -506,7 +473,7 @@ graph LR
 *Comentario disruptivo: El mercado de IA generativa explotará de $71.36B a $890.59B para 2032 (CAGR 43.4%). Sin embargo, muchas empresas están acumulando deuda técnica con GenAI. Tu diferencial: "IA responsable y escalable" vs experimentos descontrolados. Para PMEs, enfócate en casos de uso concretos y ROI medible. El "copilot" interno es tendencia - Microsoft reporta 60% más productividad.*
 
 #### 4. SPHERED CULTURE
-**👥 El 70% de proyectos de datos fallan por la GENTE, no por la tecnología.**
+**El 70% de proyectos de datos fallan por la GENTE, no por la tecnología.**
 
 Convertimos a tu equipo en data-driven warriors - porque la tecnología sin adopción es dinero tirado a la basura.
 
@@ -535,7 +502,7 @@ graph LR
 
 ### B. MODELO DE ENTREGA
 
-**🎯 VELOCIDAD + CONTROL DE RIESGO = NUESTRO ADN**
+**VELOCIDAD + CONTROL DE RIESGO = NUESTRO ADN**
 
 Entregamos valor cada 15 días. Si en 6 semanas no ves ROI tangible, paramos y replanteamos - sin penalizaciones.
 
@@ -553,17 +520,17 @@ gantt
     Transformación Escalable    :transform, after cdov, 180d
 ```
 
-**▪ Data Health Check (3–5 días)**
+**▪ Revisión de Salud de Datos (3–5 días)**
 - Evaluación rápida de calidad, integridad y riesgos.
-- Scorecard visual + Quick Wins.
+- Cuadro de mandos visual + Victorias Rápidas.
 - Comparativa anónima contra empresas similares.
 
-**▪ Data Assessment Express (2–3 semanas)**
+**▪ Evaluación Rápida de Datos (2–3 semanas)**
 - Diagnóstico + roadmap + ROI proyectado en 48h.
 
 *Comentario estratégico: Perfecto para generar confianza rápida. El mercado DaaS crece 25.3% CAGR, y los "quick wins" son críticos para PMEs que necesitan justificar ROI inmediato. Sugiero añadir "ROI projection en 48h" para diferenciarte de competidores que tardan semanas en entregar valor.*
 
-**▪ MVP de plataforma o gobierno (6–8 semanas)**
+**▪ Producto Mínimo Viable de plataforma o gobierno (6–8 semanas)**
 - Entregas funcionales quincenales.
 - Demos semanales con negocio.
 
@@ -579,16 +546,16 @@ gantt
 - Modernización sin disrupciones.
 - 100% alineado a resultados visibles.
 
-### 💶 TRANSPARENCIA EN PRICING - SIN SORPRESAS
+### TRANSPARENCIA EN PRECIOS - SIN SORPRESAS
 
 **Nuestros modelos de engagement (0% letra pequeña):**
 
 ```mermaid
 graph TB
     subgraph "ENGAGEMENT MODELS"
-        A[Data Health Check<br/>€2.5K - 3 días]
-        B[Data Assessment Express<br/>€8K - 2 semanas]
-        C[MVP Foundation<br/>€25K - 6 semanas]
+        A[Revisión Salud Datos<br/>€2.5K - 3 días]
+        B[Evaluación Rápida Datos<br/>€8K - 2 semanas]
+        C[PMV Foundation<br/>€25K - 6 semanas]
         D[CDO Virtual<br/>€15K/mes - Ongoing]
         E[Transformación Completa<br/>€50-200K - 6-12 meses]
     end
@@ -783,7 +750,7 @@ Ningún competidor importante ofrece el paquete integrado de "democratización +
 
 ---
 
-## 🚨 CALL TO ACTION SPHERED
+## LLAMADA A LA ACCIÓN SPHERED
 
 ### EL MOMENTO ES AHORA
 
@@ -797,9 +764,9 @@ Ningún competidor importante ofrece el paquete integrado de "democratización +
 
 ```mermaid
 flowchart LR
-    A[📞 15min Call<br/>Diagnóstico rápido] --> B[📊 Data Health Check<br/>€2.5K - 3 días]
-    B --> C[💡 Quick Wins<br/>ROI inmediato visible]
-    C --> D[🚀 MVP o Parar<br/>Tu decisión]
+    A[Llamada 15min<br/>Diagnóstico rápido] --> B[Revisión Salud Datos<br/>€2.5K - 3 días]
+    B --> C[Victorias Rápidas<br/>ROI inmediato visible]
+    C --> D[PMV o Parar<br/>Tu decisión]
     
     style A fill:#ff6348,stroke:#2f3542,stroke-width:3px,color:#fff
     style B fill:#ffa502,stroke:#2f3542,stroke-width:2px,color:#fff
