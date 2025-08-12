@@ -1,69 +1,74 @@
 Categoría,Item,Descripción,Cantidad,Unidad,Costo Unitario (EUR),Costo Total (EUR),Tiempo Estimado (horas),Costo Mano de Obra (EUR),Costo Mensual AWS (EUR),Costo Mensual Mano de Obra (EUR),Observaciones
-SETUP INICIAL AWS,Cuenta AWS Admin,Configuración de cuenta administradora AWS,1,cuenta,0,0,2,240,0,0,Configuración inicial de cuenta root
-SETUP INICIAL AWS,SSO Admin,Configuración de AWS SSO para administradores,1,configuración,0,0,4,480,0,0,Configuración de Identity Center y políticas
-SETUP INICIAL AWS,IAM Roles,Creación de roles y políticas para servicios,1,conjunto,0,0,3,360,0,0,Roles para ECS, Glue, Athena, etc.
-SETUP INICIAL AWS,Organización AWS,Configuración de organización multi-cuenta,1,configuración,0,0,2,240,0,0,Setup de estructura organizacional
-INFRAESTRUCTURA COMPUTE,EC2 t2.large,Instancia para Airflow Docker Compose,1,instancia,35.04,35.04,0,0,35.04,0,Costo mensual fijo (24/7)
-INFRAESTRUCTURA COMPUTE,EC2 Storage,100GB EBS GP3 para Airflow,1,100GB,10.50,10.50,0,0,10.50,0,Costo mensual fijo
-INFRAESTRUCTURA COMPUTE,EC2 Backup,Snapshots automáticos EBS,1,configuración,5.25,5.25,0,0,5.25,0,Costo mensual fijo
-INFRAESTRUCTURA COMPUTE,EC2 Data Transfer,Transferencia de datos saliente,1,configuración,2.00,2.00,0,0,2.00,0,Costo mensual bajo volumen
-INFRAESTRUCTURA COMPUTE,EC2 Monitoring,CloudWatch y métricas,1,configuración,2.00,2.00,0,0,2.00,0,Costo mensual bajo volumen
-ALMACENAMIENTO S3,Landing Bucket,empresa-datalake-landing-prod (100GB),1,100GB,2.30,2.30,0,0,2.30,0,Costo mensual bajo volumen inicial
-ALMACENAMIENTO S3,Raw Bucket,empresa-datalake-raw-prod (200GB),1,200GB,4.60,4.60,0,0,4.60,0,Costo mensual bajo volumen inicial
-ALMACENAMIENTO S3,Master Bucket,empresa-datalake-master-prod (500GB),1,500GB,11.50,11.50,0,0,11.50,0,Costo mensual bajo volumen inicial
-ALMACENAMIENTO S3,Airflow Bucket,empresa-datalake-airflow-prod (50GB),1,50GB,1.15,1.15,0,0,1.15,0,Costo mensual bajo volumen inicial
-ALMACENAMIENTO S3,Athena Bucket,empresa-datalake-athena-prod (100GB),1,100GB,2.30,2.30,0,0,2.30,0,Costo mensual bajo volumen inicial
-ALMACENAMIENTO S3,S3 Lifecycle,Políticas de retención y archivo,1,configuración,1.00,1.00,0,0,1.00,0,Costo mensual bajo volumen
-ALMACENAMIENTO S3,S3 Analytics,Análisis de uso y costos,1,configuración,0.50,0.50,0,0,0.50,0,Costo mensual bajo volumen
-CONTENEDORES,ECR Python,Repositorio para imágenes Python,1,repositorio,0.10,0.10,0,0,0.10,0,Costo mensual por imagen
-CONTENEDORES,ECR Spark,Repositorio para imágenes Spark,1,repositorio,0.10,0.10,0,0,0.10,0,Costo mensual por imagen
-CONTENEDORES,ECS Fargate Python,Cluster para ejecución de scripts Python,1,cluster,0,0,0,0,0,0,Solo pago por uso
-CONTENEDORES,ECS Fargate Spark,Cluster para ejecución de scripts Spark,1,cluster,0,0,0,0,0,0,Solo pago por uso
-CONTENEDORES,ECS Tasks Python,Ejecución de tareas Python (estimado 100/month),100,tareas,0.0004,0.04,0,0,0.04,0,Costo por tarea ejecutada - bajo volumen
-CONTENEDORES,ECS Tasks Spark,Ejecución de tareas Spark (estimado 20/month),20,tareas,0.004,0.08,0,0,0.08,0,Costo por tarea ejecutada - bajo volumen
-ORQUESTACIÓN,Airflow Installation,Instalación y configuración Docker Compose,1,instalación,0,0,8,960,0,0,Setup completo en EC2
-ORQUESTACIÓN,Airflow DAGs,Desarrollo de DAGs para ETL,1,conjunto,0,0,16,1920,0,0,Desarrollo de workflows
-ORQUESTACIÓN,Airflow Monitoring,Configuración de alertas y logs,1,configuración,0,0,4,480,0,0,Setup de monitoreo
-CATALOGADO Y CONSULTAS,Glue Data Catalog,Metadatos y catálogo de datos,1,servicio,0,0,0,0,0,0,Gratuito hasta 1M objetos
-CATALOGADO Y CONSULTAS,Glue Crawlers,Crawlers para catalogar datos,2,crawlers,0.44,0.88,0,0,0.88,0,Costo mensual por crawler
-CATALOGADO Y CONSULTAS,Athena Queries,Consultas SQL (estimado 100/month),100,consultas,0.005,0.50,0,0,0.50,0,Costo por consulta - bajo volumen
-CATALOGADO Y CONSULTAS,Athena Data Scanned,Escaneo de datos (estimado 50GB/month),50,GB,5.00,250.00,0,0,250.00,0,Costo por GB escaneado - bajo volumen
-VISUALIZACIÓN,QuickSight,Licencias de usuario (3 usuarios),3,usuarios,9.00,27.00,0,0,27.00,0,Costo mensual por usuario - inicio con 3
-VISUALIZACIÓN,QuickSight SPICE,Almacenamiento de datos para dashboards,1,configuración,0.25,0.25,0,0,0.25,0,Costo mensual por GB
-REDES Y SEGURIDAD,VPC,Red virtual privada,1,vpc,0,0,0,0,0,0,Gratuito
-REDES Y SEGURIDAD,Subnets,Subredes públicas y privadas,4,subnets,0,0,0,0,0,0,Gratuito
-REDES Y SEGURIDAD,Security Groups,Grupos de seguridad para servicios,5,grupos,0,0,0,0,0,0,Gratuito
-REDES Y SEGURIDAD,NAT Gateway,Gateway NAT para acceso a internet,1,gateway,45.00,45.00,0,0,45.00,0,Costo mensual fijo
-REDES Y SEGURIDAD,Internet Gateway,Gateway de internet,1,gateway,0,0,0,0,0,0,Gratuito
-REDES Y SEGURIDAD,Route Tables,Tablas de enrutamiento,2,tablas,0,0,0,0,0,0,Gratuito
-MONITOREO Y LOGS,CloudWatch Logs,Almacenamiento de logs (estimado 10GB/month),10,GB,0.50,5.00,0,0,5.00,0,Costo mensual bajo volumen
-MONITOREO Y LOGS,CloudWatch Metrics,Métricas personalizadas,1,servicio,0.30,0.30,0,0,0.30,0,Costo mensual
-MONITOREO Y LOGS,CloudWatch Alarms,Alertas y notificaciones,5,alarmas,0.10,0.50,0,0,0.50,0,Costo mensual bajo volumen
-BACKUP Y DISASTER RECOVERY,Cross-Region Replication,Replicación S3 entre regiones,1,configuración,0,0,0,0,0,0,Costo adicional por transferencia
-BACKUP Y DISASTER RECOVERY,Backup Strategy,Estrategia de backup y recuperación,1,estrategia,0,0,4,480,0,0,Documentación y configuración
-DESARROLLO ETL,Email Monitoring Script,Script Python para monitoreo de emails,1,script,0,0,12,1440,0,0,Desarrollo completo
-DESARROLLO ETL,Excel Processing Script,Script Python para procesamiento Excel,1,script,0,0,8,960,0,0,Desarrollo completo
-DESARROLLO ETL,Spark Transformation,Script Spark para transformación de datos,1,script,0,0,16,1920,0,0,Desarrollo completo
-DESARROLLO ETL,Data Modeling,Modelado de datos y tablas finales,1,modelo,0,0,12,1440,0,0,Diseño del modelo de datos
-DESARROLLO ETL,ETL Testing,Pruebas y validación de pipelines,1,conjunto,0,0,8,960,0,0,Testing completo
-DESARROLLO ETL,Documentation,Documentación técnica y operacional,1,conjunto,0,0,6,720,0,0,Documentación completa
-INTEGRACIÓN,Email Service Integration,Integración con servicio de email,1,integración,0,0,4,480,0,0,Configuración de forwarders
-INTEGRACIÓN,QuickSight Integration,Integración con Athena y dashboards,1,integración,0,0,6,720,0,0,Configuración de visualizaciones
-INTEGRACIÓN,Monitoring Integration,Integración de monitoreo y alertas,1,integración,0,0,4,480,0,0,Setup de alertas
-TESTING Y VALIDACIÓN,Unit Testing,Pruebas unitarias de scripts,1,conjunto,0,0,8,960,0,0,Testing de componentes
-TESTING Y VALIDACIÓN,Integration Testing,Pruebas de integración,1,conjunto,0,0,6,720,0,0,Testing de flujos completos
-TESTING Y VALIDACIÓN,Performance Testing,Pruebas de rendimiento,1,conjunto,0,0,4,480,0,0,Testing de performance
-DEPLOYMENT,CI/CD Pipeline,Pipeline de despliegue automatizado,1,pipeline,0,0,8,960,0,0,Configuración de GitHub Actions
-DEPLOYMENT,Environment Setup,Configuración de entornos,1,configuración,0,0,6,720,0,0,Setup de dev/staging/prod
-DEPLOYMENT,Deployment Scripts,Scripts de despliegue,1,conjunto,0,0,4,480,0,0,Automatización de despliegues
-CAPACITACIÓN,User Training,Capacitación de usuarios finales,1,sesión,0,0,8,960,0,0,Entrenamiento del equipo
-CAPACITACIÓN,Admin Training,Capacitación de administradores,1,sesión,0,0,6,720,0,0,Entrenamiento técnico
-SOPORTE Y MANTENIMIENTO,Post-Implementation Support,Soporte post-implementación (1 mes),1,mes,0,0,40,4800,0,0,Soporte técnico continuo
-SOPORTE Y MANTENIMIENTO,Maintenance Plan,Plan de mantenimiento y actualizaciones,1,plan,0,0,8,960,0,0,Plan de mantenimiento
-SOPORTE Y MANTENIMIENTO,Performance Optimization,Optimización de performance,1,conjunto,0,0,12,1440,0,0,Optimizaciones continuas
-PROYECTO,Project Management,Gestión del proyecto completo,1,proyecto,0,0,40,4800,0,0,Gestión y coordinación
-PROYECTO,Quality Assurance,Control de calidad del proyecto,1,conjunto,0,0,20,2400,0,0,QA y validaciones
-PROYECTO,Risk Management,Gestión de riesgos y mitigaciones,1,conjunto,0,0,8,960,0,0,Análisis y mitigación de riesgos
-PROYECTO,Change Management,Gestión de cambios organizacionales,1,conjunto,0,0,6,720,0,0,Gestión de cambios
-PROYECTO,Knowledge Transfer,Transferencia de conocimiento,1,sesión,0,0,8,960,0,0,Transferencia al equipo interno
-TOTALES,,,,,,,,,Total Mano de Obra: 35,680 EUR,Total Costo Mensual AWS: 200 EUR,Resumen de costos totales 
+SETUP INICIAL AWS,Cuenta AWS Admin,Configuración de cuenta administradora AWS,1,cuenta,"0,00",0,2,240,0,0,Configuración inicial de cuenta root
+SETUP INICIAL AWS,SSO Admin,Configuración de AWS SSO para administradores,1,configuración,"0,00",0,4,480,0,0,Configuración de Identity Center y políticas
+SETUP INICIAL AWS,IAM Roles,Creación de roles y políticas para servicios,1,conjunto,"0,00",0,3,360,0,0,Roles para ECS
+SETUP INICIAL AWS,Organización AWS,Configuración de organización multi-cuenta,1,configuración,"0,00",0,2,240,0,0,Setup de estructura organizacional
+INFRAESTRUCTURA COMPUTE,"EC2 t2,large",Instancia para Airflow Docker Compose (t2.large),1,instancia,"65,00",65,0,0,"35,04",0,Costo mensual fijo (24/7)
+INFRAESTRUCTURA COMPUTE,EC2 Storage,50GB EBS GP3 para Airflow,1,50GB,"5,00",5,0,0,"10,5",0,Costo mensual fijo
+INFRAESTRUCTURA COMPUTE,EC2 Backup,Snapshots automáticos EBS,1,configuración,"5,25","5,25",0,0,"5,25",0,Costo mensual fijo
+INFRAESTRUCTURA COMPUTE,EC2 Data Transfer,Transferencia de datos saliente,1,configuración,"2,00",2,0,0,2,0,Costo mensual bajo volumen
+INFRAESTRUCTURA COMPUTE,EC2 Monitoring,CloudWatch y métricas,1,configuración,"2,00",2,0,0,2,0,Costo mensual bajo volumen
+ALMACENAMIENTO S3,Landing Bucket,empresa-datalake-landing-prod (100GB),1,100GB,"2,30","2,3",0,0,"2,3",0,Costo mensual bajo volumen inicial
+ALMACENAMIENTO S3,Raw Bucket,empresa-datalake-raw-prod (100GB),1,100GB,"2,30","2,3",0,0,"4,6",0,Costo mensual bajo volumen inicial
+ALMACENAMIENTO S3,Master Bucket,empresa-datalake-master-prod (100GB),1,100GB,"2,30","2,3",0,0,"11,5",0,Costo mensual bajo volumen inicial
+ALMACENAMIENTO S3,Airflow Bucket,empresa-datalake-airflow-prod (100GB),1,100GB,"2,30","2,3",0,0,"1,15",0,Costo mensual bajo volumen inicial
+ALMACENAMIENTO S3,Athena Bucket,empresa-datalake-athena-prod (100GB),1,100GB,"2,30","2,3",0,0,"2,3",0,Costo mensual bajo volumen inicial
+ALMACENAMIENTO S3,S3 Lifecycle,Políticas de retención y archivo,1,configuración,"1,00",1,0,0,1,0,Costo mensual bajo volumen
+ALMACENAMIENTO S3,S3 Analytics,Análisis de uso y costos,1,configuración,"0,50","0,5",0,0,"0,5",0,Costo mensual bajo volumen
+CONTENEDORES,ECR Python,Repositorio para imágenes Python,1,repositorio,"0,10","0,1",0,0,"0,1",0,Costo mensual por imagen
+CONTENEDORES,ECR Spark,Repositorio para imágenes Spark,1,repositorio,"0,10","0,1",0,0,"0,1",0,Costo mensual por imagen
+CONTENEDORES,ECS Fargate Python,Cluster para ejecución de scripts Python,1,cluster,"0,00",0,0,0,0,0,Solo pago por uso
+CONTENEDORES,ECS Fargate Spark,Cluster para ejecución de scripts Spark,1,cluster,"0,00",0,0,0,0,0,Solo pago por uso
+CONTENEDORES,ECS Tasks Python,Ejecución de tareas Python (estimado 100/month),100,tareas,"0,10",10,0,0,"0,04",0,Costo por tarea ejecutada - bajo volumen
+CONTENEDORES,ECS Tasks Spark,Ejecución de tareas Spark (estimado 20/month),20,tareas,"0,44","8,8",0,0,"0,08",0,Costo por tarea ejecutada - bajo volumen
+ORQUESTACIÓN,Airflow Installation,Instalación y configuración Docker Compose,1,instalación,"0,00",0,8,960,0,0,Setup completo en EC2
+ORQUESTACIÓN,Airflow DAGs,Desarrollo de DAGs para ETL,1,conjunto,"0,00",0,16,1920,0,0,Desarrollo de workflows
+ORQUESTACIÓN,Airflow Monitoring,Configuración de alertas y logs,1,configuración,"0,00",0,4,480,0,0,Setup de monitoreo
+CATALOGADO Y CONSULTAS,Glue Data Catalog,Metadatos y catálogo de datos,1,servicio,"0,00",0,0,0,0,0,Gratuito hasta 1M objetos
+CATALOGADO Y CONSULTAS,Glue Crawlers,Crawlers para catalogar datos,2,crawlers,"0,44","0,88",0,0,"0,88",0,Costo mensual por crawler
+CATALOGADO Y CONSULTAS,Athena Queries,Consultas SQL (estimado 100/month),100,consultas,"0,50",50,0,0,"0,5",0,Costo por consulta - bajo volumen
+CATALOGADO Y CONSULTAS,Athena Data Scanned,Escaneo de datos (estimado 50GB/month),50,GB,"0,004882","0,2441",0,0,250,0,Costo por GB escaneado - bajo volumen
+VISUALIZACIÓN,QuickSight,Licencias de usuario (2 usuarios),2,usuarios,"9,00",18,0,0,45,0,Costo mensual por usuario - 5 dashboards
+VISUALIZACIÓN,QuickSight SPICE,Almacenamiento de datos para dashboards,1,configuración,"0,25","0,25",0,0,"1,25",0,Costo mensual por GB - estimado 5GB para 5 dashboards
+VISUALIZACIÓN,QuickSight Setup,Configuración inicial y conexión con Athena,1,configuración,"0,00",0,4,480,0,0,Setup inicial y conexión de fuentes de datos
+VISUALIZACIÓN,QuickSight Dashboards,Desarrollo de 5 dashboards interactivos,1,conjunto,"0,00",0,16,1920,0,0,Creación de dashboards con visualizaciones y KPIs
+VISUALIZACIÓN,QuickSight Training,Capacitación en uso de QuickSight,1,sesión,"0,00",0,4,480,0,0,Entrenamiento para usuarios finales
+REDES Y SEGURIDAD,VPC,Red virtual privada,1,vpc,"0,00",0,0,0,0,0,Gratuito
+REDES Y SEGURIDAD,Subnets,Subredes públicas y privadas,4,subnets,"0,00",0,0,0,0,0,Gratuito
+REDES Y SEGURIDAD,Security Groups,Grupos de seguridad para servicios,5,grupos,"0,00",0,0,0,0,0,Gratuito
+REDES Y SEGURIDAD,NAT Gateway,Gateway NAT para acceso a internet,1,gateway,"35,00",35,0,0,45,0,Costo mensual fijo
+REDES Y SEGURIDAD,Internet Gateway,Gateway de internet,1,gateway,"0,00",0,0,0,0,0,Gratuito
+REDES Y SEGURIDAD,Route Tables,Tablas de enrutamiento,2,tablas,"0,00",0,0,0,0,0,Gratuito
+MONITOREO Y LOGS,CloudWatch Logs,Almacenamiento de logs (estimado 10GB/month),10,GB,"0,50",5,0,0,5,0,Costo mensual bajo volumen
+MONITOREO Y LOGS,CloudWatch Metrics,Métricas personalizadas,1,servicio,"0,30","0,3",0,0,"0,3",0,Costo mensual
+MONITOREO Y LOGS,CloudWatch Alarms,Alertas y notificaciones,5,alarmas,"0,10","0,5",0,0,"0,5",0,Costo mensual bajo volumen
+BACKUP Y DISASTER RECOVERY,Cross-Region Replication,Replicación S3 entre regiones,1,configuración,"0,00",0,0,0,0,0,Costo adicional por transferencia
+BACKUP Y DISASTER RECOVERY,Backup Strategy,Estrategia de backup y recuperación,1,estrategia,"0,00",0,4,480,0,0,Documentación y configuración
+DESARROLLO ETL,Email Monitoring Script,Script Python para monitoreo de emails,1,script,"0,00",0,12,1440,0,0,Desarrollo completo
+DESARROLLO ETL,Excel Processing Script,Script Python para procesamiento Excel,1,script,"0,00",0,8,960,0,0,Desarrollo completo
+DESARROLLO ETL,Spark Transformation,Script Spark para transformación de datos,1,script,"0,00",0,16,1920,0,0,Desarrollo completo
+DESARROLLO ETL,Data Modeling,Modelado de datos y tablas finales,1,modelo,"0,00",0,12,1440,0,0,Diseño del modelo de datos
+DESARROLLO ETL,ETL Testing,Pruebas y validación de pipelines,1,conjunto,"0,00",0,8,960,0,0,Testing completo
+DESARROLLO ETL,Documentation,Documentación técnica y operacional,1,conjunto,"0,00",0,6,720,0,0,Documentación completa
+INTEGRACIÓN,Email Service Integration,Integración con servicio de email,1,integración,"0,00",0,4,480,0,0,Configuración de forwarders
+INTEGRACIÓN,QuickSight Integration,Integración con Athena y dashboards,1,integración,"0,00",0,6,720,0,0,Configuración de visualizaciones
+INTEGRACIÓN,Monitoring Integration,Integración de monitoreo y alertas,1,integración,"0,00",0,4,480,0,0,Setup de alertas
+TESTING Y VALIDACIÓN,Unit Testing,Pruebas unitarias de scripts,1,conjunto,"0,00",0,8,960,0,0,Testing de componentes
+TESTING Y VALIDACIÓN,Integration Testing,Pruebas de integración,1,conjunto,"0,00",0,6,720,0,0,Testing de flujos completos
+TESTING Y VALIDACIÓN,Performance Testing,Pruebas de rendimiento,1,conjunto,"0,00",0,4,480,0,0,Testing de performance
+DEPLOYMENT,CI/CD Pipeline,Pipeline de despliegue automatizado,1,pipeline,"0,00",0,8,960,0,0,Configuración de GitHub Actions
+DEPLOYMENT,Environment Setup,Configuración de entornos,1,configuración,"0,00",0,6,720,0,0,Setup de dev/staging/prod
+DEPLOYMENT,Deployment Scripts,Scripts de despliegue,1,conjunto,"0,00",0,4,480,0,0,Automatización de despliegues
+CAPACITACIÓN,User Training,Capacitación de usuarios finales,1,sesión,"0,00",0,8,960,0,0,Entrenamiento del equipo
+CAPACITACIÓN,Admin Training,Capacitación de administradores,1,sesión,"0,00",0,6,720,0,0,Entrenamiento técnico
+SOPORTE Y MANTENIMIENTO,Post-Implementation Support,Soporte post-implementación (1 mes),1,mes,"0,00",0,40,4800,0,0,Soporte técnico continuo
+SOPORTE Y MANTENIMIENTO,Maintenance Plan,Plan de mantenimiento y actualizaciones,1,plan,"0,00",0,8,960,0,0,Plan de mantenimiento
+SOPORTE Y MANTENIMIENTO,Performance Optimization,Optimización de performance,1,conjunto,"0,00",0,12,1440,0,0,Optimizaciones continuas
+PROYECTO,Project Management,Gestión del proyecto completo,1,proyecto,"0,00",0,40,4800,0,0,Gestión y coordinación
+PROYECTO,Quality Assurance,Control de calidad del proyecto,1,conjunto,"0,00",0,20,2400,0,0,QA y validaciones
+PROYECTO,Risk Management,Gestión de riesgos y mitigaciones,1,conjunto,"0,00",0,8,960,0,0,Análisis y mitigación de riesgos
+PROYECTO,Change Management,Gestión de cambios organizacionales,1,conjunto,"0,00",0,6,720,0,0,Gestión de cambios
+PROYECTO,Knowledge Transfer,Transferencia de conocimiento,1,sesión,"0,00",0,8,960,0,0,Transferencia al equipo interno
+,,,,,,,,,,,
+Tatal Mensual AWS,Total Horas Implementación,Implementación one time,,,,,,,,,
+"221,42 €","335,00 €","40.200,00 €",,,,,,,,,

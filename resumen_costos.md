@@ -19,8 +19,8 @@
 
 ### **4. CONTENEDORES**
 - **Mano de Obra**: 0.00 EUR
-- **AWS Mensual**: 0.32 EUR
-- **Total**: 0.32 EUR
+- **AWS Mensual**: 18.92 EUR
+- **Total**: 18.92 EUR
 
 ### **5. ORQUESTACIÓN**
 - **Mano de Obra**: 3,360.00 EUR
@@ -29,13 +29,13 @@
 
 ### **6. CATALOGADO Y CONSULTAS**
 - **Mano de Obra**: 0.00 EUR
-- **AWS Mensual**: 251.38 EUR
-- **Total**: 251.38 EUR
+- **AWS Mensual**: 301.38 EUR
+- **Total**: 301.38 EUR
 
 ### **7. VISUALIZACIÓN**
-- **Mano de Obra**: 0.00 EUR
-- **AWS Mensual**: 27.25 EUR
-- **Total**: 27.25 EUR
+- **Mano de Obra**: 2,880.00 EUR
+- **AWS Mensual**: 46.25 EUR
+- **Total**: 2,926.25 EUR
 
 ### **8. REDES Y SEGURIDAD**
 - **Mano de Obra**: 0.00 EUR
@@ -111,20 +111,20 @@
 |----------|-------------|
 | **Infraestructura Compute** | 54.79 |
 | **Almacenamiento S3** | 23.40 |
-| **Contenedores** | 0.32 |
-| **Catalogado y Consultas** | 251.38 |
-| **Visualización** | 27.25 |
+| **Contenedores** | 18.92 |
+| **Catalogado y Consultas** | 301.38 |
+| **Visualización** | 46.25 |
 | **Redes y Seguridad** | 45.00 |
 | **Monitoreo y Logs** | 5.80 |
-| **🔴 TOTAL MENSUAL AWS** | **407.54** |
+| **🔴 TOTAL MENSUAL AWS** | **495.14** |
 
 ### **📊 COSTOS ANUALES**
 | Concepto | Monto (EUR) |
 |----------|-------------|
 | **Implementación (una vez)** | 38,440.00 |
-| **AWS Anual (12 meses)** | 4,890.48 |
-| **🔴 TOTAL PRIMER AÑO** | **43,330.48** |
-| **🔴 TOTAL AÑOS SUBSIGUIENTES** | **4,890.48** |
+| **AWS Anual (12 meses)** | 5,941.68 |
+| **🔴 TOTAL PRIMER AÑO** | **44,381.68** |
+| **🔴 TOTAL AÑOS SUBSIGUIENTES** | **5,941.68** |
 
 ---
 
@@ -132,9 +132,9 @@
 
 ### **💡 Puntos Clave:**
 - **Implementación**: 38,440 EUR (una vez)
-- **Operación Mensual**: 407 EUR
-- **Operación Anual**: 4,890 EUR
-- **Mayor Costo AWS**: Athena Data Scanned (250 EUR/mes) - representa el 61% del costo mensual
+- **Operación Mensual**: 495 EUR
+- **Operación Anual**: 5,942 EUR
+- **Mayor Costo AWS**: Athena Data Scanned (250 EUR/mes) - representa el 50% del costo mensual
 - **Mayor Costo Mano de Obra**: Desarrollo ETL (7,440 EUR)
 
 ### **📉 Optimizaciones Posibles:**
@@ -145,7 +145,7 @@
 
 ### **📈 Escalabilidad:**
 - **Costos fijos**: ~130 EUR/mes (EC2, NAT Gateway, QuickSight)
-- **Costos variables**: ~277 EUR/mes (Athena, S3, ECS, CloudWatch)
+- **Costos variables**: ~365 EUR/mes (Athena, S3, ECS, CloudWatch)
 - **Escalado lineal**: Los costos crecen proporcionalmente al volumen de datos
 
 ---
@@ -161,22 +161,25 @@
 
 ### **Almacenamiento (23.40 EUR)**
 - Landing Bucket (100GB): 2.30 EUR
-- Raw Bucket (200GB): 4.60 EUR
-- Master Bucket (500GB): 11.50 EUR
-- Airflow Bucket (50GB): 1.15 EUR
+- Raw Bucket (100GB): 2.30 EUR
+- Master Bucket (100GB): 2.30 EUR
+- Airflow Bucket (100GB): 2.30 EUR
 - Athena Bucket (100GB): 2.30 EUR
 - Lifecycle & Analytics: 1.50 EUR
 
-### **Procesamiento (251.70 EUR)**
-- Glue Crawlers: 0.88 EUR
-- Athena Queries (100/month): 0.50 EUR
-- **Athena Data Scanned (50GB/month): 250.00 EUR** ⚠️
-- ECS Tasks: 0.12 EUR
+### **Contenedores (18.92 EUR)**
 - ECR Repositories: 0.20 EUR
+- ECS Tasks Python (100/month): 10.00 EUR
+- ECS Tasks Spark (20/month): 8.80 EUR
 
-### **Visualización (27.25 EUR)**
-- QuickSight (3 usuarios): 27.00 EUR
-- SPICE Storage: 0.25 EUR
+### **Procesamiento (301.38 EUR)**
+- Glue Crawlers: 0.88 EUR
+- Athena Queries (100/month): 50.00 EUR
+- **Athena Data Scanned (50GB/month): 250.00 EUR** ⚠️
+
+### **Visualización (46.25 EUR)**
+- QuickSight (2 usuarios): 18.00 EUR
+- SPICE Storage (5GB): 1.25 EUR
 
 ### **Redes y Seguridad (45.00 EUR)**
 - NAT Gateway: 45.00 EUR
@@ -191,27 +194,27 @@
 
 ## 💰 **ROI Y JUSTIFICACIÓN**
 
-### **Inversión Total Primer Año: 43,330 EUR**
-### **Costos Operativos Anuales: 4,890 EUR**
+### **Inversión Total Primer Año: 44,382 EUR**
+### **Costos Operativos Anuales: 5,942 EUR**
 ### **Ahorro Anual Estimado: 50,000 EUR**
-### **ROI Anual: 115%**
-### **Tiempo de Recuperación: 10 meses**
+### **ROI Anual: 113%**
+### **Tiempo de Recuperación: 11 meses**
 
 ---
 
 ## 📊 **COMPARACIÓN CON COSTOS INICIALES**
 
 ### **Cambios Realizados:**
-- **Volumen S3**: Reducido de 4.1TB a 950GB (77% reducción)
-- **Consultas Athena**: Reducidas de 1000 a 100/month (90% reducción)
-- **Data Scanned**: Reducido de 500GB a 50GB/month (90% reducción)
-- **Usuarios QuickSight**: Reducidos de 5 a 3 (40% reducción)
-- **Logs CloudWatch**: Reducidos de 50GB a 10GB/month (80% reducción)
+- **Volumen S3**: Reducido a 500GB total (bajo volumen inicial)
+- **Consultas Athena**: 100/month (bajo volumen)
+- **Data Scanned**: 50GB/month (bajo volumen)
+- **Usuarios QuickSight**: 2 usuarios iniciales
+- **Logs CloudWatch**: 10GB/month (bajo volumen)
 
 ### **Impacto en Costos:**
-- **Costo Mensual AWS**: Reducido de 2,800 EUR a 407 EUR (85% reducción)
-- **Costo Anual AWS**: Reducido de 33,606 EUR a 4,890 EUR (85% reducción)
-- **Total Primer Año**: Reducido de 72,046 EUR a 43,330 EUR (40% reducción)
+- **Costo Mensual AWS**: Reducido de 2,800 EUR a 495 EUR (82% reducción)
+- **Costo Anual AWS**: Reducido de 33,606 EUR a 5,942 EUR (82% reducción)
+- **Total Primer Año**: Reducido de 72,046 EUR a 44,382 EUR (38% reducción)
 
 ---
 

@@ -8,9 +8,9 @@ Implementación de una arquitectura completa de datalake y datawarehouse en AWS 
 
 | Concepto | Monto (EUR) |
 |----------|-------------|
-| **Implementación** | 37,000.00 |
-| **Operación Mensual** | 2,800.00 |
-| **Operación Anual** | 33,600.00 |
+| **Implementación** | 38,440.00 |
+| **Operación Mensual** | 495.00 |
+| **Operación Anual** | 5,942.00 |
 
 ## 🚀 **Entregables Principales**
 
@@ -20,7 +20,7 @@ Implementación de una arquitectura completa de datalake y datawarehouse en AWS 
 ✅ **Procesamiento Python y Spark** (Contenedores Docker)  
 ✅ **Catalogado automático con AWS Glue**  
 ✅ **Consultas SQL con Amazon Athena**  
-✅ **Dashboards con Amazon QuickSight** (5 usuarios)  
+✅ **Dashboards con Amazon QuickSight** (2 usuarios iniciales)  
 ✅ **Monitoreo y alertas con CloudWatch**  
 
 ## 📊 **Flujo de Datos**
@@ -42,8 +42,8 @@ Implementación de una arquitectura completa de datalake y datawarehouse en AWS 
 ## 🎯 **ROI Esperado**
 
 - **Ahorro Anual Estimado**: 50,000 EUR
-- **ROI Anual**: 135%
-- **Tiempo de Recuperación**: 9 meses
+- **ROI Anual**: 113%
+- **Tiempo de Recuperación**: 11 meses
 
 ## 🔒 **Seguridad y Compliance**
 

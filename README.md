@@ -6,6 +6,9 @@ Este proyecto implementa una arquitectura completa de datalake y datawarehouse e
 
 ## 📊 Cotización Detallada
 
+### **📋 Enlace a la Cotización Final:**
+**[📊 Google Sheets - Cotización Datalake AWS](https://docs.google.com/spreadsheets/d/1Pk4dn7hHzEPcrEkN8MqgCtHSWx6x-OLbVncW-FyAH14/edit?gid=0#gid=0)**
+
 El archivo `cotizacion_datalake_aws.csv` contiene una cotización completa e itemizada que incluye:
 
 ### 💰 **Resumen de Costos**
@@ -436,7 +439,9 @@ Email → Python Script → Landing S3 → Spark Transform → Raw S3 → Spark 
 
 ## 📋 **Próximos Pasos**
 
-1. **Revisión de Cotización**: Validar items y costos
+1. **📊 Revisión de Cotización**: 
+   - [Ver cotización detallada en Google Sheets](https://docs.google.com/spreadsheets/d/1Pk4dn7hHzEPcrEkN8MqgCtHSWx6x-OLbVncW-FyAH14/edit?gid=0#gid=0)
+   - Validar items y costos
 2. **Aprobación del Proyecto**: Confirmar alcance y presupuesto
 3. **Kick-off Meeting**: Inicio formal del proyecto
 4. **Setup AWS**: Configuración inicial de infraestructura
