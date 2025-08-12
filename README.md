@@ -1,28 +1,28 @@
-# 🏗️ Arquitectura de Datalake/Datawarehouse en AWS
+# Arquitectura de Datalake/Datawarehouse en AWS
 
-## 📋 Descripción del Proyecto
+## Descripción del Proyecto
 
 Este proyecto implementa una arquitectura completa de datalake y datawarehouse en AWS para el procesamiento de datos empresariales. La solución incluye orquestación con Apache Airflow, procesamiento de datos con Python y Spark, almacenamiento en S3, catalogado con AWS Glue, consultas con Athena, y visualización con Amazon QuickSight.
 
-## 📊 Cotización Detallada
+## Cotización Detallada
 
-### **📋 Enlace a la Cotización Final:**
-**[📊 Google Sheets - Cotización Datalake AWS](https://docs.google.com/spreadsheets/d/1Pk4dn7hHzEPcrEkN8MqgCtHSWx6x-OLbVncW-FyAH14/edit?gid=0#gid=0)**
+### Enlace a la Cotización Final:
+**[Google Sheets - Cotización Datalake AWS](https://docs.google.com/spreadsheets/d/1Pk4dn7hHzEPcrEkN8MqgCtHSWx6x-OLbVncW-FyAH14/edit?gid=0#gid=0)**
 
 El archivo `cotizacion_datalake_aws.csv` contiene una cotización completa e itemizada que incluye:
 
-### 💰 **Resumen de Costos**
+### Resumen de Costos
 
 | Categoría | Costo AWS Mensual (EUR) | Mano de Obra (EUR) | Total (EUR) |
 |-----------|-------------------------|-------------------|-------------|
 | **SETUP INICIAL AWS** | 0.00 | 1,320.00 | 1,320.00 |
-| **INFRAESTRUCTURA COMPUTE** | 74.79 | 0.00 | 74.79 |
-| **ALMACENAMIENTO S3** | 102.30 | 0.00 | 102.30 |
-| **CONTENEDORES** | 1.00 | 0.00 | 1.00 |
-| **CATALOGADO Y CONSULTAS** | 2,505.88 | 0.00 | 2,505.88 |
-| **VISUALIZACIÓN** | 45.25 | 0.00 | 45.25 |
+| **INFRAESTRUCTURA COMPUTE** | 54.79 | 0.00 | 54.79 |
+| **ALMACENAMIENTO S3** | 23.40 | 0.00 | 23.40 |
+| **CONTENEDORES** | 18.92 | 0.00 | 18.92 |
+| **CATALOGADO Y CONSULTAS** | 301.38 | 0.00 | 301.38 |
+| **VISUALIZACIÓN** | 46.25 | 2,880.00 | 2,926.25 |
 | **REDES Y SEGURIDAD** | 45.00 | 0.00 | 45.00 |
-| **MONITOREO Y LOGS** | 26.30 | 0.00 | 26.30 |
+| **MONITOREO Y LOGS** | 5.80 | 0.00 | 5.80 |
 | **DESARROLLO ETL** | 0.00 | 7,440.00 | 7,440.00 |
 | **INTEGRACIÓN** | 0.00 | 1,680.00 | 1,680.00 |
 | **TESTING Y VALIDACIÓN** | 0.00 | 2,160.00 | 2,160.00 |
@@ -31,61 +31,61 @@ El archivo `cotizacion_datalake_aws.csv` contiene una cotización completa e ite
 | **SOPORTE Y MANTENIMIENTO** | 0.00 | 7,200.00 | 7,200.00 |
 | **PROYECTO** | 0.00 | 10,960.00 | 10,960.00 |
 
-**💰 TOTAL IMPLEMENTACIÓN: 37,000.00 EUR**  
-**💰 TOTAL MENSUAL AWS: 2,800.00 EUR**
+**TOTAL IMPLEMENTACIÓN: 40,200.00 EUR**  
+**TOTAL MENSUAL AWS: 221.42 EUR**
 
-### 📈 **Desglose por Fases**
+### Desglose por Fases
 
 1. **Fase 1 - Setup Inicial (1-2 semanas)**: 1,320 EUR
-2. **Fase 2 - Infraestructura (2-3 semanas)**: 74.79 EUR/mes
+2. **Fase 2 - Infraestructura (2-3 semanas)**: 54.79 EUR/mes
 3. **Fase 3 - Desarrollo ETL (4-6 semanas)**: 7,440 EUR
 4. **Fase 4 - Integración y Testing (2-3 semanas)**: 3,840 EUR
 5. **Fase 5 - Deployment y Capacitación (1-2 semanas)**: 3,840 EUR
 6. **Fase 6 - Soporte Post-Implementación (1 mes)**: 7,200 EUR
 
-## 🏛️ Arquitectura del Sistema
+## Arquitectura del Sistema
 
-### 🔄 **Diagrama de Arquitectura General**
+### Diagrama de Arquitectura General
 
 ```mermaid
 graph TB
     subgraph "ORIGEN DE DATOS"
-        A[📧 Email Forwarders] --> B[📨 Casilla de Email]
-        B --> C[📎 Excel Attachments]
+        A[Email Forwarders] --> B[Casilla de Email]
+        B --> C[Excel Attachments]
     end
     
     subgraph "ORQUESTACIÓN"
-        D[🔄 Apache Airflow<br/>EC2 t2.large<br/>Docker Compose]
+        D[Apache Airflow<br/>EC2 t2.large<br/>Docker Compose]
     end
     
     subgraph "PROCESAMIENTO PYTHON"
-        E[🐍 Python Container<br/>AWS ECR<br/>ECS Fargate]
+        E[Python Container<br/>AWS ECR<br/>ECS Fargate]
     end
     
     subgraph "PROCESAMIENTO SPARK"
-        F[⚡ Spark Container<br/>AWS ECR<br/>ECS Fargate]
+        F[Spark Container<br/>AWS ECR<br/>ECS Fargate]
     end
     
     subgraph "ALMACENAMIENTO S3"
-        G[📥 Landing Bucket<br/>empresa-datalake-landing-prod]
-        H[🔄 Raw Bucket<br/>empresa-datalake-raw-prod]
-        I[📊 Master Bucket<br/>empresa-datalake-master-prod]
-        J[⚙️ Airflow Bucket<br/>empresa-datalake-airflow-prod]
-        K[🔍 Athena Bucket<br/>empresa-datalake-athena-prod]
+        G[Landing Bucket<br/>empresa-datalake-landing-prod]
+        H[Raw Bucket<br/>empresa-datalake-raw-prod]
+        I[Master Bucket<br/>empresa-datalake-master-prod]
+        J[Airflow Bucket<br/>empresa-datalake-airflow-prod]
+        K[Athena Bucket<br/>empresa-datalake-athena-prod]
     end
     
     subgraph "CATALOGADO Y CONSULTAS"
-        L[📚 AWS Glue<br/>Data Catalog]
-        M[🔍 Amazon Athena<br/>SQL Queries]
+        L[AWS Glue<br/>Data Catalog]
+        M[Amazon Athena<br/>SQL Queries]
     end
     
     subgraph "VISUALIZACIÓN"
-        N[📈 Amazon QuickSight<br/>Dashboards]
+        N[Amazon QuickSight<br/>Dashboards]
     end
     
     subgraph "MONITOREO"
-        O[📊 CloudWatch<br/>Logs & Metrics]
-        P[🚨 Alertas y<br/>Notificaciones]
+        O[CloudWatch<br/>Logs & Metrics]
+        P[Alertas y<br/>Notificaciones]
     end
     
     C --> D
@@ -124,85 +124,85 @@ graph TB
     class O,P monitor
 ```
 
-### 🔄 **Flujo de Datos ETL**
+### Flujo de Datos ETL
 
 ```mermaid
 sequenceDiagram
-    participant Email as 📧 Email Service
-    participant Airflow as 🔄 Apache Airflow
-    participant Python as 🐍 Python Container
-    participant Spark as ⚡ Spark Container
-    participant Landing as 📥 Landing S3
-    participant Raw as 🔄 Raw S3
-    participant Master as 📊 Master S3
-    participant Glue as 📚 AWS Glue
-    participant Athena as 🔍 Athena
-    participant QuickSight as 📈 QuickSight
+    participant Email as Email Service
+    participant Airflow as Apache Airflow
+    participant Python as Python Container
+    participant Spark as Spark Container
+    participant Landing as Landing S3
+    participant Raw as Raw S3
+    participant Master as Master S3
+    participant Glue as AWS Glue
+    participant Athena as Athena
+    participant QuickSight as QuickSight
     
     Note over Email,QuickSight: FLUJO ETL COMPLETO
     
-    Email->>Airflow: 📨 Nuevo email con Excel
-    Airflow->>Python: 🚀 Ejecutar script de monitoreo
-    Python->>Email: 📥 Descargar attachment
-    Python->>Landing: 💾 Guardar Excel original
+    Email->>Airflow: Nuevo email con Excel
+    Airflow->>Python: Ejecutar script de monitoreo
+    Python->>Email: Descargar attachment
+    Python->>Landing: Guardar Excel original
     
-    Airflow->>Spark: 🚀 Ejecutar transformación
-    Spark->>Landing: 📖 Leer Excel
-    Spark->>Raw: 💾 Guardar datos en Parquet
+    Airflow->>Spark: Ejecutar transformación
+    Spark->>Landing: Leer Excel
+    Spark->>Raw: Guardar datos en Parquet
     
-    Airflow->>Spark: 🚀 Ejecutar modelado
-    Spark->>Raw: 📖 Leer datos raw
-    Spark->>Master: 💾 Guardar tablón final
+    Airflow->>Spark: Ejecutar modelado
+    Spark->>Raw: Leer datos raw
+    Spark->>Master: Guardar tablón final
     
-    Airflow->>Glue: 🔄 Ejecutar crawler
-    Glue->>Landing: 📚 Catalogar landing
-    Glue->>Raw: 📚 Catalogar raw
-    Glue->>Master: 📚 Catalogar master
+    Airflow->>Glue: Ejecutar crawler
+    Glue->>Landing: Catalogar landing
+    Glue->>Raw: Catalogar raw
+    Glue->>Master: Catalogar master
     
-    Athena->>Glue: 🔍 Consultar metadatos
-    Athena->>Master: 📊 Ejecutar consultas SQL
+    Athena->>Glue: Consultar metadatos
+    Athena->>Master: Ejecutar consultas SQL
     
-    QuickSight->>Athena: 📈 Obtener datos
-    QuickSight->>QuickSight: 🎨 Generar dashboards
+    QuickSight->>Athena: Obtener datos
+    QuickSight->>QuickSight: Generar dashboards
 ```
 
-### 🏗️ **Arquitectura de Red y Seguridad**
+### Arquitectura de Red y Seguridad
 
 ```mermaid
 graph TB
     subgraph "INTERNET"
-        A[🌐 Internet]
+        A[Internet]
     end
     
     subgraph "VPC - 10.0.0.0/16"
         subgraph "PUBLIC SUBNET - 10.0.1.0/24"
-            B[🌐 Internet Gateway]
-            C[🔒 NAT Gateway]
-            D[🔄 Apache Airflow<br/>EC2 t2.large]
+            B[Internet Gateway]
+            C[NAT Gateway]
+            D[Apache Airflow<br/>EC2 t2.large]
         end
         
         subgraph "PRIVATE SUBNET - 10.0.2.0/24"
-            E[🐍 Python ECS Tasks]
-            F[⚡ Spark ECS Tasks]
+            E[Python ECS Tasks]
+            F[Spark ECS Tasks]
         end
         
         subgraph "PRIVATE SUBNET - 10.0.3.0/24"
-            G[🗄️ RDS (si aplica)]
+            G[RDS (si aplica)]
         end
         
         subgraph "SECURITY GROUPS"
-            H[🔒 SG-Airflow<br/>Puertos: 22, 8080]
-            I[🔒 SG-ECS<br/>Puertos: 80, 443]
-            J[🔒 SG-Database<br/>Puerto: 5432]
+            H[SG-Airflow<br/>Puertos: 22, 8080]
+            I[SG-ECS<br/>Puertos: 80, 443]
+            J[SG-Database<br/>Puerto: 5432]
         end
     end
     
     subgraph "AWS SERVICES"
-        K[📦 S3 Buckets]
-        L[📚 AWS Glue]
-        M[🔍 Amazon Athena]
-        N[📈 QuickSight]
-        O[📊 CloudWatch]
+        K[S3 Buckets]
+        L[AWS Glue]
+        M[Amazon Athena]
+        N[QuickSight]
+        O[CloudWatch]
     end
     
     A --> B
@@ -234,9 +234,9 @@ graph TB
     class K,L,M,N,O aws
 ```
 
-## 🚀 **Componentes Principales**
+## Componentes Principales
 
-### 1. **Orquestación - Apache Airflow**
+### 1. Orquestación - Apache Airflow
 - **Ubicación**: EC2 t2.large con Docker Compose
 - **Función**: Programación y monitoreo de workflows ETL
 - **Características**: 
@@ -245,7 +245,7 @@ graph TB
   - Gestión de dependencias entre tareas
   - Alertas y notificaciones
 
-### 2. **Procesamiento Python**
+### 2. Procesamiento Python
 - **Contenedor**: Docker en AWS ECR
 - **Orquestación**: ECS Fargate
 - **Funciones**:
@@ -254,7 +254,7 @@ graph TB
   - Ingesta en bucket Landing
   - Validación de datos
 
-### 3. **Procesamiento Spark**
+### 3. Procesamiento Spark
 - **Contenedor**: Docker con Java 11 y Spark 3.5.2
 - **Orquestación**: ECS Fargate
 - **Funciones**:
@@ -263,26 +263,26 @@ graph TB
   - Modelado de datos finales
   - Escritura en bucket Master
 
-### 4. **Almacenamiento S3**
-- **Landing**: Datos originales sin modificar
-- **Raw**: Datos transformados en Parquet
-- **Master**: Tablones finales modelados
-- **Airflow**: DAGs, configuraciones y logs
-- **Athena**: Resultados de consultas
+### 4. Almacenamiento S3
+- **Landing**: Datos originales sin modificar (100GB)
+- **Raw**: Datos transformados en Parquet (100GB)
+- **Master**: Tablones finales modelados (100GB)
+- **Airflow**: DAGs, configuraciones y logs (100GB)
+- **Athena**: Resultados de consultas (100GB)
 
-### 5. **Catalogado y Consultas**
+### 5. Catalogado y Consultas
 - **AWS Glue**: Metadatos y catálogo de datos
 - **Amazon Athena**: Consultas SQL sobre S3
 - **Crawlers**: Catalogado automático de nuevos datos
 
-### 6. **Visualización**
-- **Amazon QuickSight**: Dashboards interactivos
+### 6. Visualización
+- **Amazon QuickSight**: Dashboards interactivos (2 usuarios iniciales)
 - **Integración**: Conexión directa con Athena
-- **Usuarios**: 5 licencias incluidas
+- **SPICE Storage**: 5GB para almacenamiento de datos
 
-## 📧 **Flujo de Email ETL**
+## Flujo de Email ETL
 
-### **Configuración de Forwarders**
+### Configuración de Forwarders
 1. **Email Principal**: `datos@empresa.com`
 2. **Forwarders**: 
    - `forwarder1@empresa.com` → Envía Excel A
@@ -290,76 +290,76 @@ graph TB
 3. **Frecuencia**: Monitoreo cada 1 hora
 4. **Procesamiento**: Automático con Airflow
 
-### **Pipeline de Datos**
+### Pipeline de Datos
 ```
 Email → Python Script → Landing S3 → Spark Transform → Raw S3 → Spark Model → Master S3 → Glue Catalog → Athena → QuickSight
 ```
 
-## 🔧 **Requisitos Técnicos**
+## Requisitos Técnicos
 
-### **EC2 t2.large**
+### EC2 t2.large
 - **CPU**: 2 vCPUs
 - **RAM**: 8 GB
-- **Storage**: 100 GB EBS GP3
+- **Storage**: 50 GB EBS GP3
 - **OS**: Amazon Linux 2 o Ubuntu 20.04
 
-### **Docker Compose**
+### Docker Compose
 - **Airflow**: 2.8.0
 - **PostgreSQL**: 13
 - **Redis**: 7.2
 - **Volúmenes**: DAGs, logs, config, plugins
 
-### **Contenedores ECS**
+### Contenedores ECS
 - **Python**: 3.11-slim con dependencias
 - **Spark**: 3.5.2 con Java 11
 - **Recursos**: Configurables por tarea
 
-## 📊 **Monitoreo y Alertas**
+## Monitoreo y Alertas
 
-### **CloudWatch**
+### CloudWatch
 - **Logs**: Centralización de logs de todos los servicios
 - **Métricas**: CPU, memoria, almacenamiento, latencia
 - **Alertas**: Notificaciones por email/SMS
 - **Dashboards**: Visualización de métricas en tiempo real
 
-### **Airflow**
+### Airflow
 - **Task Status**: Estado de cada tarea ETL
 - **DAG Runs**: Historial de ejecuciones
 - **SLA Monitoring**: Alertas por incumplimiento de SLAs
 - **Email Notifications**: Notificaciones automáticas
 
-## 🔒 **Seguridad y Compliance**
+## Seguridad y Compliance
 
-### **IAM y Roles**
+### IAM y Roles
 - **Principle of Least Privilege**: Acceso mínimo necesario
 - **Service Roles**: Roles específicos para cada servicio
 - **Cross-Account Access**: Si se requiere multi-cuenta
 
-### **VPC y Networking**
+### VPC y Networking
 - **Private Subnets**: Para tareas ECS sensibles
 - **Security Groups**: Restricción de tráfico
 - **NAT Gateway**: Acceso controlado a internet
 
-### **Data Encryption**
+### Data Encryption
 - **S3**: Encriptación en reposo (AES-256)
 - **Transit**: TLS 1.2+ para transferencias
 - **KMS**: Gestión de claves de encriptación
 
-## 📈 **Escalabilidad y Performance**
+## Escalabilidad y Performance
 
-### **Auto-scaling**
+### Auto-scaling
 - **ECS Fargate**: Escalado automático basado en demanda
 - **S3**: Escalado automático del almacenamiento
 - **Athena**: Procesamiento paralelo de consultas
 
-### **Optimizaciones**
+### Optimizaciones
 - **Parquet**: Formato columnar para consultas eficientes
 - **Partitioning**: Particionado por fecha en S3
 - **Compression**: Compresión de datos para reducir costos
 
-## 🚀 **Implementación y Deployment**
+## Implementación y Deployment
 
-### **Fases del Proyecto**
+### Fases del Proyecto
 1. **Setup AWS** (1-2 semanas)
 2. **Infraestructura** (2-3 semanas)
 3. **Desarrollo ETL** (4-6 semanas)
@@ -369,67 +369,67 @@ Email → Python Script → Landing S3 → Spark Transform → Raw S3 → Spark 
 7. **Capacitación** (1 semana)
 8. **Soporte Post-Implementación** (1 mes)
 
-### **CI/CD Pipeline**
+### CI/CD Pipeline
 - **GitHub Actions**: Automatización de despliegues
 - **Docker Builds**: Construcción automática de imágenes
 - **Testing**: Pruebas automáticas antes del despliegue
 - **Rollback**: Capacidad de revertir cambios
 
-## 📚 **Documentación y Capacitación**
+## Documentación y Capacitación
 
-### **Documentación Técnica**
+### Documentación Técnica
 - **Arquitectura**: Diagramas y especificaciones técnicas
 - **Operaciones**: Runbooks y procedimientos
 - **API**: Documentación de interfaces
 - **Troubleshooting**: Guías de resolución de problemas
 
-### **Capacitación**
+### Capacitación
 - **Usuarios Finales**: Uso de QuickSight y dashboards
 - **Administradores**: Gestión de Airflow y monitoreo
 - **Desarrolladores**: Extensión de pipelines ETL
 - **DevOps**: Mantenimiento de infraestructura
 
-## 💰 **Análisis de Costos**
+## Análisis de Costos
 
-### **Costos Fijos Mensuales**
-- **EC2 + Storage**: ~75 EUR
-- **S3 Storage**: ~100 EUR
-- **QuickSight**: ~45 EUR
+### Costos Fijos Mensuales
+- **EC2 + Storage**: ~55 EUR
+- **S3 Storage**: ~23 EUR
+- **QuickSight**: ~46 EUR
 - **NAT Gateway**: ~45 EUR
-- **Total Fijo**: ~265 EUR/mes
+- **Total Fijo**: ~169 EUR/mes
 
-### **Costos Variables**
-- **Athena Queries**: ~2,500 EUR/mes (estimado)
-- **ECS Tasks**: ~1 EUR/mes
-- **CloudWatch**: ~26 EUR/mes
-- **Total Variable**: ~2,527 EUR/mes
+### Costos Variables
+- **Athena Queries**: ~50 EUR/mes
+- **ECS Tasks**: ~19 EUR/mes
+- **CloudWatch**: ~6 EUR/mes
+- **Total Variable**: ~52 EUR/mes
 
-### **Total Estimado Mensual**: ~2,800 EUR
+### Total Estimado Mensual: ~221 EUR
 
-## 🎯 **ROI y Beneficios**
+## ROI y Beneficios
 
-### **Beneficios Esperados**
+### Beneficios Esperados
 - **Automatización**: Reducción del 80% en tareas manuales
 - **Tiempo Real**: Acceso inmediato a datos actualizados
 - **Escalabilidad**: Crecimiento sin límites de infraestructura
 - **Compliance**: Cumplimiento de regulaciones de datos
 - **Insights**: Mejores decisiones basadas en datos
 
-### **ROI Estimado**
-- **Inversión Inicial**: 37,000 EUR
-- **Costos Anuales**: 33,600 EUR
+### ROI Estimado
+- **Inversión Inicial**: 40,200 EUR
+- **Costos Anuales**: 2,657 EUR
 - **Ahorro Anual Estimado**: 50,000 EUR
-- **ROI Anual**: 135%
+- **ROI Anual**: 124%
 
-## 📞 **Soporte y Mantenimiento**
+## Soporte y Mantenimiento
 
-### **Soporte Post-Implementación**
+### Soporte Post-Implementación
 - **1 Mes Incluido**: Soporte técnico completo
 - **Horario**: 9:00-18:00 CET
 - **Response Time**: 4 horas para críticos, 24h para normales
 - **Canales**: Email, teléfono, videollamada
 
-### **Plan de Mantenimiento**
+### Plan de Mantenimiento
 - **Actualizaciones**: Parches de seguridad mensuales
 - **Optimizaciones**: Mejoras de performance trimestrales
 - **Backup**: Verificación semanal de estrategias de backup
@@ -437,9 +437,9 @@ Email → Python Script → Landing S3 → Spark Transform → Raw S3 → Spark 
 
 ---
 
-## 📋 **Próximos Pasos**
+## Próximos Pasos
 
-1. **📊 Revisión de Cotización**: 
+1. **Revisión de Cotización**: 
    - [Ver cotización detallada en Google Sheets](https://docs.google.com/spreadsheets/d/1Pk4dn7hHzEPcrEkN8MqgCtHSWx6x-OLbVncW-FyAH14/edit?gid=0#gid=0)
    - Validar items y costos
 2. **Aprobación del Proyecto**: Confirmar alcance y presupuesto
@@ -449,6 +449,6 @@ Email → Python Script → Landing S3 → Spark Transform → Raw S3 → Spark 
 
 ---
 
-*📧 Para consultas adicionales: [tu-email@empresa.com]*  
-*📱 Teléfono: [+34 XXX XXX XXX]*  
-*🌐 Web: [www.tu-empresa.com]* 
+*Para consultas adicionales: [tu-email@empresa.com]*  
+*Teléfono: [+34 XXX XXX XXX]*  
+*Web: [www.tu-empresa.com]* 
