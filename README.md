@@ -187,7 +187,7 @@ graph TB
         end
         
         subgraph "PRIVATE SUBNET - 10.0.3.0/24"
-            G[RDS (si aplica)]
+            G[RDS si aplica]
         end
         
         subgraph "SECURITY GROUPS"
