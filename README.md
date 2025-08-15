@@ -4,6 +4,39 @@
 
 Este proyecto implementa una arquitectura completa de datalake y datawarehouse en AWS para el procesamiento de datos empresariales. La solución incluye orquestación con Apache Airflow, procesamiento de datos con Python y Spark, almacenamiento en S3, catalogado con AWS Glue, consultas con Athena, y visualización con Amazon QuickSight.
 
+## 📅 Cronograma del Proyecto
+
+### **🚀 Resumen del Cronograma**
+- **Fecha de Inicio**: Lunes 25 de Agosto de 2025
+- **Fecha de Finalización**: Viernes 31 de Octubre de 2025
+- **Duración Total**: 10 semanas (2.5 meses)
+
+### **📊 Fases del Proyecto**
+
+#### **🏗️ FASE 1: INFRAESTRUCTURA BASE (Semanas 1-5)**
+- **Semana 1-2**: Configuración AWS (25 Ago - 8 Sep)
+- **Semana 3-4**: Construcción Data Lake (9 Sep - 22 Sep)
+- **Semana 5**: Arquitectura de Almacenamiento (23 Sep - 6 Oct)
+
+#### **🔄 FASE 2: DESARROLLO ETL (Semanas 6-8)**
+- **Semana 6**: Desarrollo ETL inicial - Recepción emails y extracción Excel (7 Oct - 13 Oct)
+- **Semana 7**: Desarrollo ETL intermedio - Transformación y catalogación (14 Oct - 20 Oct)
+- **Semana 8**: Desarrollo ETL final - Pipeline optimizado (21 Oct - 27 Oct)
+
+#### **🧪 FASE 3: PRUEBAS Y DASHBOARD (Semanas 9-10)**
+- **Semana 9**: Pruebas finales y ajustes (28 Oct - 30 Oct)
+- **Semana 10**: Dashboard QuickSight y despliegue final (31 Oct)
+
+### **👥 Equipo del Proyecto**
+- **🏗️ Arquitecto Infraestructura**: Configuración AWS, construcción del Data Lake, arquitectura de almacenamiento
+- **🔧 Arquitecto ETL**: Desarrollo completo del pipeline ETL, transformaciones y catalogación
+- **📊 Arquitecto Analytics**: Pruebas, validación, dashboard QuickSight y despliegue final
+
+### **🎯 Hitos del Proyecto**
+- **🏆 Hito 1**: 6 Octubre 2025 - Infraestructura AWS completamente configurada
+- **🚀 Hito 2**: 27 Octubre 2025 - Pipeline ETL funcionando y procesando datos
+- **🎉 Hito 3**: 31 Octubre 2025 - Sistema completo en producción con dashboard activo
+
 ## Arquitectura del Sistema
 
 ### Diagrama de Arquitectura General
