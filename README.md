@@ -158,39 +158,42 @@ graph TB
 
 ```mermaid
 sequenceDiagram
-    participant Email as Email Service
-    participant Airflow as Apache Airflow
-    participant Python as Python Container
-    participant Spark as Spark Container
-    participant Landing as Landing S3
-    participant Raw as Raw S3
-    participant Master as Master S3
-    participant Glue as AWS Glue
-    participant Athena as Athena
-    participant QuickSight as QuickSight
+    participant Email as 📧 Email Service
+    participant Airflow as ⚡ Apache Airflow
+    participant Python as 🐍 Python Container
+    participant Spark as 🔥 Spark Container
+    participant Landing as 📥 Landing S3
+    participant Bronze as 🥉 Bronze S3
+    participant Silver as 🥈 Silver S3
+    participant Gold as 🥇 Gold S3
+    participant Glue as 🕷️ AWS Glue
+    participant Athena as 🏛️ Athena
+    participant QuickSight as 📊 QuickSight
     
-    Note over Email,QuickSight: FLUJO ETL COMPLETO
+    Note over Email,QuickSight: 🚀 FLUJO ETL COMPLETO - ARQUITECTURA MODERNA
     
     Email->>Airflow: Nuevo email con Excel
     Airflow->>Python: Ejecutar script de monitoreo
     Python->>Email: Descargar attachment
-    Python->>Landing: Guardar Excel original
+    Python->>Landing: Guardar Excel original (raw files)
     
-    Airflow->>Spark: Ejecutar transformación
+    Airflow->>Spark: Ejecutar transformación Bronze
     Spark->>Landing: Leer Excel
-    Spark->>Raw: Guardar datos en Parquet
+    Spark->>Bronze: Guardar datos en Parquet (1:1 + metadatos)
     
-    Airflow->>Spark: Ejecutar modelado
-    Spark->>Raw: Leer datos raw
-    Spark->>Master: Guardar tablón final
+    Airflow->>Spark: Ejecutar transformación Silver
+    Spark->>Bronze: Leer datos Bronze
+    Spark->>Silver: Limpieza, tipado, normalización
+    
+    Airflow->>Spark: Ejecutar transformación Gold
+    Spark->>Silver: Leer datos Silver
+    Spark->>Gold: Agregaciones, métricas, data marts
     
     Airflow->>Glue: Ejecutar crawler
-    Glue->>Landing: Catalogar landing
-    Glue->>Raw: Catalogar raw
-    Glue->>Master: Catalogar master
+    Glue->>Gold: Catalogar Gold (datos listos para consumo)
     
     Athena->>Glue: Consultar metadatos
-    Athena->>Master: Ejecutar consultas SQL
+    Athena->>Gold: Ejecutar consultas SQL analíticas
     
     QuickSight->>Athena: Obtener datos
     QuickSight->>QuickSight: Generar dashboards
