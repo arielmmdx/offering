@@ -37,6 +37,42 @@ Este proyecto implementa una arquitectura completa de datalake y datawarehouse e
 - **🚀 Hito 2**: 27 Octubre 2025 - Pipeline ETL funcionando y procesando datos
 - **🎉 Hito 3**: 31 Octubre 2025 - Sistema completo en producción con dashboard activo
 
+### **📊 Diagrama Cronológico del Proyecto**
+
+```mermaid
+sequenceDiagram
+    participant Infra as 🏗️ Arquitecto Infraestructura
+    participant ETL as 🔧 Arquitecto ETL
+    participant Analytics as 📊 Arquitecto Analytics
+    participant System as 🖥️ Sistema
+    participant AWS as ☁️ AWS Services
+    participant S3 as 🗂️ S3 Buckets
+    participant Pipeline as ⚙️ ETL Pipeline
+    
+    Note over Infra,Pipeline: 🚀 CRONOGRAMA COMPLETO DEL PROYECTO DATA LAKE AWS (25 Agosto - 31 Octubre 2025)
+    
+    Note over Infra,Pipeline: 🏗️ FASE 1: INFRAESTRUCTURA BASE (Semanas 1-5)
+    Infra->>AWS: Inicio del Proyecto - 25 Agosto 2025
+    Infra->>AWS: Configuración AWS (25 Agosto - 8 Septiembre)
+    Infra->>S3: Construcción Data Lake (9 Septiembre - 22 Septiembre)
+    Infra->>System: Arquitectura de Almacenamiento (23 Septiembre - 6 Octubre)
+    Infra->>Infra: ✅ Infraestructura Completada - 6 Octubre 2025
+    
+    Note over Infra,Pipeline: 🔄 FASE 2: DESARROLLO ETL (Semanas 6-8)
+    ETL->>Pipeline: Inicio Desarrollo ETL - 7 Octubre 2025
+    ETL->>Pipeline: Desarrollo ETL Completo (7 Octubre - 27 Octubre)
+    ETL->>Pipeline: Recepción Email + Extracción Excel + Ingesta + Transformación + Catalogación
+    ETL->>ETL: ✅ ETL Completado - 27 Octubre 2025
+    
+    Note over Infra,Pipeline: 🧪 FASE 3: PRUEBAS Y DASHBOARD (Semanas 9-10)
+    Analytics->>System: Inicio Pruebas - 28 Octubre 2025
+    Analytics->>System: Pruebas Finales y Ajustes (28 Octubre - 30 Octubre)
+    Analytics->>System: Creación Dashboard QuickSight (31 Octubre)
+    Analytics->>Analytics: ✅ Sistema en Producción - 31 Octubre 2025
+    
+    Note over Infra,Pipeline: 🎉 PROYECTO COMPLETADO EXITOSAMENTE
+```
+
 ## Arquitectura del Sistema
 
 ### Diagrama de Arquitectura General
