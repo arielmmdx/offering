@@ -4,45 +4,6 @@
 
 Este proyecto implementa una arquitectura completa de datalake y datawarehouse en AWS para el procesamiento de datos empresariales. La solución incluye orquestación con Apache Airflow, procesamiento de datos con Python y Spark, almacenamiento en S3, catalogado con AWS Glue, consultas con Athena, y visualización con Amazon QuickSight.
 
-## Cotización Detallada
-
-### Enlace a la Cotización Final:
-**[Google Sheets - Cotización Datalake AWS](https://docs.google.com/spreadsheets/d/1Pk4dn7hHzEPcrEkN8MqgCtHSWx6x-OLbVncW-FyAH14/edit?gid=0#gid=0)**
-
-El archivo `cotizacion_datalake_aws.csv` contiene una cotización completa e itemizada que incluye:
-
-### Resumen de Costos
-
-| Categoría | Costo AWS Mensual (EUR) | Mano de Obra (EUR) | Total (EUR) |
-|-----------|-------------------------|-------------------|-------------|
-| **SETUP INICIAL AWS** | 0.00 | 1,320.00 | 1,320.00 |
-| **INFRAESTRUCTURA COMPUTE** | 54.79 | 0.00 | 54.79 |
-| **ALMACENAMIENTO S3** | 23.40 | 0.00 | 23.40 |
-| **CONTENEDORES** | 18.92 | 0.00 | 18.92 |
-| **CATALOGADO Y CONSULTAS** | 301.38 | 0.00 | 301.38 |
-| **VISUALIZACIÓN** | 46.25 | 2,880.00 | 2,926.25 |
-| **REDES Y SEGURIDAD** | 45.00 | 0.00 | 45.00 |
-| **MONITOREO Y LOGS** | 5.80 | 0.00 | 5.80 |
-| **DESARROLLO ETL** | 0.00 | 7,440.00 | 7,440.00 |
-| **INTEGRACIÓN** | 0.00 | 1,680.00 | 1,680.00 |
-| **TESTING Y VALIDACIÓN** | 0.00 | 2,160.00 | 2,160.00 |
-| **DEPLOYMENT** | 0.00 | 2,160.00 | 2,160.00 |
-| **CAPACITACIÓN** | 0.00 | 1,680.00 | 1,680.00 |
-| **SOPORTE Y MANTENIMIENTO** | 0.00 | 7,200.00 | 7,200.00 |
-| **PROYECTO** | 0.00 | 10,960.00 | 10,960.00 |
-
-**TOTAL IMPLEMENTACIÓN: 40,200.00 EUR**  
-**TOTAL MENSUAL AWS: 221.42 EUR**
-
-### Desglose por Fases
-
-1. **Fase 1 - Setup Inicial (1-2 semanas)**: 1,320 EUR
-2. **Fase 2 - Infraestructura (2-3 semanas)**: 54.79 EUR/mes
-3. **Fase 3 - Desarrollo ETL (4-6 semanas)**: 7,440 EUR
-4. **Fase 4 - Integración y Testing (2-3 semanas)**: 3,840 EUR
-5. **Fase 5 - Deployment y Capacitación (1-2 semanas)**: 3,840 EUR
-6. **Fase 6 - Soporte Post-Implementación (1 mes)**: 7,200 EUR
-
 ## Arquitectura del Sistema
 
 ### Diagrama de Arquitectura General
@@ -448,7 +409,3 @@ Email → Python Script → Landing S3 → Spark Transform → Raw S3 → Spark 
 5. **Desarrollo Iterativo**: Implementación por fases
 
 ---
-
-*Para consultas adicionales: [tu-email@empresa.com]*  
-*Teléfono: [+34 XXX XXX XXX]*  
-*Web: [www.tu-empresa.com]* 
