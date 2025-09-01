@@ -1,12 +1,12 @@
 # SPHERED - Transformación Digital de Datos para PMEs
 
-> **"Ahorra €100K en cloud, toma decisiones en minutos y cumple con la ley de IA — sin contratar un equipo de datos."**
+> **"Ahorra en cloud, toma decisiones en minutos y cumple con la ley de IA — sin contratar un equipo de datos."**
 
 ## REALIDAD DEL MERCADO ESPAÑOL PME
 
 **El problema silencioso que nadie quiere admitir:**
 - 67% de las PMEs españolas no confían en sus datos para decisiones críticas
-- Pierden €50-200K anuales en ineficiencias cloud por falta de FinOps
+- Pierden en ineficiencias cloud por falta de FinOps
 - Solo 23% están preparadas para el AI Act (vigente desde febrero 2024)
 - 78% sufren "parálisis por análisis" - demasiados datos, pocas decisiones
 
@@ -69,9 +69,9 @@ flowchart LR
 *Comentario estratégico: El diagnóstico de madurez es crítico - 67% de las empresas no confían en sus datos para tomar decisiones. Sugiero añadir "Assessment de ROI potencial" para justificar inversiones. La gestión de metadatos será central en 2025, con 80% de empresas priorizándola. Considera destacar "Quick wins identificables" en los primeros 30 días para generar tracción inmediata.*
 
 #### 2. SPHERED PLATFORM
-**Infraestructura que escala contigo - desde €5K hasta €50K sin rehacerlo.**
+**Infraestructura que escala contigo - crece con tu negocio sin rehacerla.**
 
-Arquitectura modular, FinOps integrado, ahorro garantizado del 25-40% en costes cloud desde el día 1.
+Arquitectura modular, FinOps integrado, ahorro garantizado en costes cloud desde el día 1.
 
 ```mermaid
 graph TB
@@ -110,7 +110,7 @@ graph TB
 ```
 
 - Data Lake, Data Mesh o Data Fabric (según matriz de decisión).
-- Entornos híbridos o multi-nube (AWS, GCP, Azure, Snowflake…).
+- Entornos híbridos o multi-nube (AWS, GCP, Microsoft Fabric, Snowflake…).
 - Integración y automatización de pipelines.
 - Observabilidad total y resiliencia de plataformas.
 - FinOps para optimizar costes cloud.
@@ -200,7 +200,7 @@ graph TB
 - **BigQuery** cuando analytics >100TB diarios
 - **Databricks** cuando ML/IA son core business
 - **Tableau** para enterprises con inversión legacy
-- **Azure Synapse** solo en ecosistemas Microsoft puros
+- **Microsoft Fabric** solo en ecosistemas Microsoft puros
 
 **Tecnologías que EVITAMOS y por qué:**
 - **Palantir**: Over-engineering para PMEs, TCO prohibitivo
@@ -261,7 +261,7 @@ graph TB
 **Ventajas decisivas para PMEs:**
 
 - **Ecosistema más maduro**: 15+ años de evolución en datos, servicios estables y documentación completa
-- **Coste-eficiencia probada**: Modelo pay-as-you-go más granular, ahorro real del 25-40% vs competencia
+- **Coste-eficiencia probada**: Modelo pay-as-you-go más granular, ahorro real vs competencia
 - **Talent disponible**: 3x más profesionales certificados en España que GCP/Azure datos
 - **Integración nativa**: S3 + Glue + Redshift + Athena funcionan como ecosistema unificado
 - **Serverless real**: Lambda + Glue eliminan gestión de infraestructura
@@ -321,26 +321,26 @@ graph TB
 - Ya usas Google Workspace extensivamente
 - Tienes talento específico en Google Stack
 
-#### Microsoft Azure - TERCERA OPCIÓN CONDICIONAL
+#### Microsoft Fabric - TERCERA OPCIÓN CONDICIONAL
 
-**¿Por qué Azure es nuestra tercera recomendación?**
+**¿Por qué Microsoft Fabric es nuestra tercera recomendación?**
 
 ```mermaid
 graph TB
-    subgraph "Stack Azure"
-        A[Azure Data Lake<br/>Storage Gen2]
-        B[Azure Synapse<br/>Analytics Platform]
-        C[Azure Databricks<br/>Spark Platform]
+    subgraph "Stack Microsoft Fabric"
+        A[OneLake<br/>Data Lake Storage]
+        B[Data Factory<br/>ETL & Orchestration]
+        C[Spark Platform<br/>Data Processing]
         D[Power BI<br/>Business Intelligence]
-        E[Azure ML<br/>Machine Learning]
+        E[ML Platform<br/>Machine Learning]
     end
     
     subgraph "Pros vs Contras"
         F[Integración Office<br/>Ecosistema Microsoft]
         G[Nube Híbrida<br/>Puente On-premise]
-        H[Complejidad<br/>Múltiples servicios overlapping]
-        I[Precios<br/>Menos transparente]
-        J[Bloqueo de Proveedor<br/>Más agresivo]
+        H[Simplicidad<br/>Plataforma unificada]
+        I[Integración<br/>Power BI nativo]
+        J[Ecosistema<br/>Microsoft completo]
     end
     
     A --> F
@@ -351,29 +351,28 @@ graph TB
     
     style F fill:#0078d4,stroke:#2f3542,stroke-width:2px,color:#fff
     style G fill:#0078d4,stroke:#2f3542,stroke-width:2px,color:#fff
-    style H fill:#d32f2f,stroke:#2f3542,stroke-width:2px,color:#fff
-    style I fill:#d32f2f,stroke:#2f3542,stroke-width:2px,color:#fff
-    style J fill:#d32f2f,stroke:#2f3542,stroke-width:2px,color:#fff
+    style H fill:#0078d4,stroke:#2f3542,stroke-width:2px,color:#fff
+    style I fill:#0078d4,stroke:#2f3542,stroke-width:2px,color:#fff
+    style J fill:#0078d4,stroke:#2f3542,stroke-width:2px,color:#fff
 ```
 
-**¿Cuándo recomendamos Azure?**
+**¿Cuándo recomendamos Microsoft Fabric?**
 
 - **Microsoft-heavy organizations**: Si >70% de tu stack es Microsoft (Office 365, Dynamics, SharePoint)
 - **Hybrid cloud necesario**: Migración gradual desde on-premise Windows
 - **Power BI commitment**: Ya tienes inversión significativa en Power BI Premium
-- **Regulatory compliance**: Sectores que requieren Azure Government o híbrido
+- **Regulatory compliance**: Sectores que requieren Microsoft Government o híbrido
 
-**Limitaciones críticas:**
-- **Complejidad arquitectural**: 3-4 servicios para lo que AWS hace con 1-2
-- **Vendor lock-in agresivo**: Más difícil salir del ecosistema una vez dentro
-- **TCO menos predecible**: Pricing más complejo, sorpresas en facturas comunes
-- **Talent gap**: Menos especialistas en Azure Data Stack en mercado español
+**Ventajas específicas:**
+- **Plataforma unificada**: Un solo servicio para todo el flujo de datos
+- **Integración nativa**: Power BI integrado sin configuración adicional
+- **Simplicidad operativa**: Menos servicios que gestionar
+- **Ecosistema Microsoft**: Integración perfecta con Office 365 y Dynamics
 
-**Databricks en Azure - Caso Especial:**
-Databricks es excellent, pero recomendamos la versión AWS de Databricks sobre Azure por:
-- Menor overhead operativo
-- Networking más simple
-- Mejor performance en workloads mixtos
+**Consideraciones importantes:**
+- **Ecosistema Microsoft**: Ideal si ya estás comprometido con Microsoft
+- **Power BI**: Mejor experiencia si usas Power BI como herramienta principal
+- **Talent disponible**: Especialistas en Microsoft Fabric en crecimiento
 
 #### MATRIZ DE DECISIÓN SPHERED
 
@@ -382,22 +381,22 @@ graph TB
     subgraph "Decision Matrix"
         A[Startup/Scaleup<br/>Cost-sensitive] --> AWS
         B[Analytics Heavy<br/>100TB+ daily] --> GCP
-        C[Microsoft Ecosystem<br/>Hybrid needs] --> Azure
+        C[Microsoft Ecosystem<br/>Hybrid needs] --> MicrosoftFabric
         D[ML/IA First<br/>Google DNA] --> GCP
         E[Enterprise Scale<br/>Multi-region] --> AWS
         F[Real-time Stream<br/>Kafka intensive] --> GCP
-        G[Power BI Investment<br/>Office 365 heavy] --> Azure
+        G[Power BI Investment<br/>Office 365 heavy] --> MicrosoftFabric
         H[Unknown/Mixed<br/>Requirements] --> AWS
     end
     
     style AWS fill:#ff9500,stroke:#2f3542,stroke-width:3px,color:#fff
     style GCP fill:#4285f4,stroke:#2f3542,stroke-width:2px,color:#fff
-    style Azure fill:#0078d4,stroke:#2f3542,stroke-width:2px,color:#fff
+    style MicrosoftFabric fill:#0078d4,stroke:#2f3542,stroke-width:2px,color:#fff
 ```
 
 **Nuestra recomendación por defecto: AWS al 80% de casos.**
 
-*Comentario estratégico: Después de 200+ implementaciones, AWS demuestra el mejor TCO y time-to-value para PMEs españolas. GCP para casos específicos de analytics pesados. Azure solo cuando el ecosistema Microsoft es irrenunciable.*
+*Comentario estratégico: Después de 200+ implementaciones, AWS demuestra el mejor TCO y time-to-value para PMEs españolas. GCP para casos específicos de analytics pesados. Microsoft Fabric solo cuando el ecosistema Microsoft es irrenunciable.*
 
 #### 3. SPHERED INTELLIGENCE
 **De "tengo muchos datos" a "sé exactamente qué hacer" en semanas.**
@@ -457,10 +456,10 @@ graph LR
         D3[Risk Assessment<br/>-30% defaults]
     end
     
-    A1 --> ROI1[€120K ahorrados/año]
-    B1 --> ROI2[€85K ahorrados/año]
-    C1 --> ROI3[€200K ahorrados/año]
-    D1 --> ROI4[€300K ahorrados/año]
+    A1 --> ROI1[Ahorros significativos/año]
+    B1 --> ROI2[Ahorros significativos/año]
+    C1 --> ROI3[Ahorros significativos/año]
+    D1 --> ROI4[Ahorros significativos/año]
     
     style ROI1 fill:#26de81,stroke:#2f3542,stroke-width:3px,color:#fff
     style ROI2 fill:#26de81,stroke:#2f3542,stroke-width:3px,color:#fff
@@ -553,16 +552,16 @@ gantt
 ```mermaid
 graph TB
     subgraph "ENGAGEMENT MODELS"
-        A[Revisión Salud Datos<br/>€2.5K - 3 días]
-        B[Evaluación Rápida Datos<br/>€8K - 2 semanas]
-        C[PMV Foundation<br/>€25K - 6 semanas]
-        D[CDO Virtual<br/>€15K/mes - Ongoing]
-        E[Transformación Completa<br/>€50-200K - 6-12 meses]
+        A[Revisión Salud Datos<br/>3 días]
+        B[Evaluación Rápida Datos<br/>2 semanas]
+        C[PMV Foundation<br/>6 semanas]
+        D[CDO Virtual<br/>Ongoing]
+        E[Transformación Completa<br/>6-12 meses]
     end
     
     subgraph "GARANTÍAS"
         F[ROI 3x o money back<br/>Primer año]
-        G[25% ahorro cloud<br/>Garantizado 90 días]
+        G[Ahorro cloud<br/>Garantizado 90 días]
         H[Weekly demos<br/>Transparencia total]
     end
     
@@ -590,15 +589,15 @@ mindmap
     Enfoque en Valor
       ROI medible 30 días
       Business case justificado
-      Cada euro documentado
+      Valor documentado
     Modularidad Escalable
       Plug-and-play
-      €5K → €50K
+      Escalable
       Sin rehacer arquitectura
     Cultura + Tecnología
       Personas Y plataformas
       Adoption paralelo
-      Sin dinero perdido
+      Sin recursos perdidos
     IA Sin Fricciones
       Implementación semanas
       No años
@@ -615,9 +614,9 @@ mindmap
 *Comentario crítico: Esto lo dice todo el mundo. El diferencial real debe ser "ROI medible en 30 días" o "Business case justificado antes de cada euro invertido". Las PMEs necesitan justificación inmediata, no promesas.*
 
 **▪ Modularidad escalable**
-"Arquitectura plug-and-play que crece contigo: empieza en €5K, escala sin rehacer nada hasta €50K."
+"Arquitectura plug-and-play que crece contigo: empieza pequeño, escala sin rehacer nada."
 
-*Comentario técnico: Esto es GOLD puro. El 70% de proyectos data fallan por over-engineering inicial. Sin embargo, falta especificidad. Sugiero: "Arquitectura modular que crece contigo: desde €5K/mes hasta €50K/mes sin rehacerlo"*
+*Comentario técnico: Esto es GOLD puro. El 70% de proyectos data fallan por over-engineering inicial. Sin embargo, falta especificidad. Sugiero: "Arquitectura modular que crece contigo sin rehacerla"*
 
 **▪ Cultura + Tecnología**
 "Transformamos personas Y plataformas en paralelo — porque la tecnología sin adoption es dinero perdido."
@@ -672,9 +671,9 @@ graph TB
 
 *Comentario de tendencia: El mercado GenAI en analytics será $12.45B en 2034. Pero PMEs no saben qué es un "copiloto". Mejor: "Asistente IA que responde preguntas de negocio en segundos".*
 
-- Reducción de costes cloud: ahorro garantizado del 20–30% en 90 días.
+- Reducción de costes cloud: ahorro garantizado en 90 días.
 
-*Comentario de oro: ESTO ES TU TROJAN HORSE comercial. Las empresas desperdician 32% presupuesto cloud. PMEs pueden ahorrar €50–200K anuales. Sugiero liderar con esto: "Reduce tus costes cloud 30% en 90 días - garantizado".*
+*Comentario de oro: ESTO ES TU TROJAN HORSE comercial. Las empresas desperdician un porcentaje significativo del presupuesto cloud. PMEs pueden ahorrar considerables cantidades anuales. Sugiero liderar con esto: "Reduce tus costes cloud en 90 días - garantizado".*
 
 ### E. IMPACTO PROMETIDO (CON KPIs)
 
@@ -686,7 +685,7 @@ graph LR
         D[Confianza +80%<br/>KPIs auditables]
         E[Agilidad<br/>5 días → 2 horas]
         F[Innovación<br/>3x experimentos]
-        G[Costes -40%<br/>Operaciones]
+        G[Costes optimizados<br/>Operaciones]
         H[Cultura +90%<br/>Data-driven]
     end
     
@@ -713,9 +712,9 @@ graph LR
 
 *Comentario de valor: Muy abstracto. Mejor: "Lanza 3x más experimentos de producto por trimestre".*
 
-- Costes optimizados: ahorro del 20–40% en operaciones y 50% menos tiempo en reportes manuales.
+- Costes optimizados: ahorro significativo en operaciones y reducción del tiempo en reportes manuales.
 
-*Comentario crítico: Aquí está el ROI. Las PMEs necesitan números: "20–40% reducción costes operativos data" o "50% menos tiempo en reportes manuales".*
+*Comentario crítico: Aquí está el ROI. Las PMEs necesitan números concretos de reducción de costes operativos y tiempo en reportes manuales.*
 
 - Cultura data-driven: +90% de empleados usan datos para decidir en 6 meses.
 
@@ -727,7 +726,7 @@ graph LR
 El mercado de consultoría en Big Data proyecta un crecimiento de $150B con un CAGR del 15%. Sin embargo, el 60% está en manos de las Big Four. Aquí se abre tu oportunidad: posicionarte como una "boutique especializada que democratiza el acceso a datos" — una tendencia crítica para 2025.
 
 **Dolor crítico no mencionado:**
-FinOps es el dolor silencioso más grande. Las empresas desperdician un 32% de su presupuesto cloud. En el caso de las PMEs españolas, eso equivale a entre €50K y €200K anuales. Convierte FinOps en tu caballo de Troya comercial.
+FinOps es el dolor silencioso más grande. Las empresas desperdician un porcentaje significativo de su presupuesto cloud. En el caso de las PMEs españolas, eso equivale a pérdidas anuales considerables. Convierte FinOps en tu caballo de Troya comercial.
 
 **Urgencia regulatoria:**
 Con el AI Act en vigor, se abre una ventana temporal: las empresas necesitan urgentemente incorporar "gobernanza de IA". Muy pocos consultores lo ofrecen aún. Es un océano azul para capturar.
@@ -742,7 +741,7 @@ Ningún competidor importante ofrece el paquete integrado de "democratización +
 
 **Gap competitivo identificado:** Ningún competidor ofrece "FinOps + Data + Culture" como paquete integrado para PMEs españolas. Ese es tu territorio virgen.
 
-**Propuesta de valor killer:** "Ahorra €100K+ en cloud mientras construyes tu plataforma de datos - sin contratar CDO ni Data Engineers".
+**Propuesta de valor killer:** "Ahorra en cloud mientras construyes tu plataforma de datos - sin contratar CDO ni Data Engineers".
 
 **Urgencia regulatoria:** AI Act + GDPR crean una ventana de oportunidad temporal. Las PMEs necesitan compliance urgente — posiciónate como "el especialista que evita multas".
 
@@ -755,8 +754,8 @@ Ningún competidor importante ofrece el paquete integrado de "democratización +
 ### EL MOMENTO ES AHORA
 
 **Por qué actuar YA:**
-- **AI Act**: Compliance obligatorio desde febrero 2024 - €35M multa máxima
-- **Cloud waste**: Cada mes que pasa pierdes €5-15K en ineficiencias 
+- **AI Act**: Compliance obligatorio desde febrero 2024 - multas significativas
+- **Cloud waste**: Cada mes que pasa pierdes en ineficiencias 
 - **Competencia**: Tus competidores están moviendo. Los que no se muevan, mueren.
 - **Talento**: El coste de Data Engineers subió 40% en 2024. Nosotros lo resolvemos.
 
@@ -764,7 +763,7 @@ Ningún competidor importante ofrece el paquete integrado de "democratización +
 
 ```mermaid
 flowchart LR
-    A[Llamada 15min<br/>Diagnóstico rápido] --> B[Revisión Salud Datos<br/>€2.5K - 3 días]
+    A[Llamada 15min<br/>Diagnóstico rápido] --> B[Revisión Salud Datos<br/>3 días]
     B --> C[Victorias Rápidas<br/>ROI inmediato visible]
     C --> D[PMV o Parar<br/>Tu decisión]
     
@@ -778,7 +777,7 @@ flowchart LR
 
 ### GARANTÍA SPHERED
 
-> **"Si en 90 días no has ahorrado al menos €25K en costes cloud O no ves ROI tangible en tus decisiones, te devolvemos el 100% de lo invertido. Sin preguntas. Sin letra pequeña."**
+> **"Si en 90 días no has ahorrado en costes cloud O no ves ROI tangible en tus decisiones, te devolvemos el 100% de lo invertido. Sin preguntas. Sin letra pequeña."**
 
 **No hay riesgo para ti. Todo el riesgo lo asumimos nosotros.**
 
