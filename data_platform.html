@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esferas Concéntricas v2 - Data Engineering SPHERED</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .container {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            color: white;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .subtitle {
+            color: #f0f0f0;
+            font-size: 1.2em;
+            margin-bottom: 20px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+
+        .spheres-container {
+            position: relative;
+            width: 600px;
+            height: 600px;
+            margin: 0 auto;
+        }
+
+        .sphere {
+            position: absolute;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .sphere:hover {
+            transform: scale(1.05);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.4);
+        }
+
+        /* Esfera más externa - Modelos Analíticos Avanzados */
+        .sphere-analytics {
+            width: 500px;
+            height: 500px;
+            top: 50px;
+            left: 50px;
+            background: radial-gradient(circle, #ff6b6b, #ee5a52);
+            border: 4px solid #fff;
+            font-size: 1.8em;
+            z-index: 1;
+        }
+
+        /* Esfera intermedia - Gobernanza y Linaje */
+        .sphere-governance {
+            width: 350px;
+            height: 350px;
+            top: 125px;
+            left: 125px;
+            background: radial-gradient(circle, #00d2d3, #00b8b9);
+            border: 3px solid #fff;
+            font-size: 1.5em;
+            z-index: 2;
+        }
+
+        /* Esfera central - Plataforma de Datos */
+        .sphere-platform {
+            width: 200px;
+            height: 200px;
+            top: 200px;
+            left: 200px;
+            background: radial-gradient(circle, #32cd32, #28a428);
+            border: 3px solid #fff;
+            font-size: 1.2em;
+            z-index: 3;
+        }
+
+        .sphere-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+        }
+
+        .sphere-title {
+            font-size: 0.9em;
+            margin-bottom: 5px;
+            font-weight: 900;
+        }
+
+        .sphere-subtitle {
+            font-size: 0.7em;
+            opacity: 0.9;
+            font-weight: 600;
+        }
+
+        .sphere-description {
+            font-size: 0.6em;
+            opacity: 0.8;
+            margin-top: 5px;
+        }
+
+        .legend {
+            margin-top: 40px;
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .legend h3 {
+            color: white;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+            color: white;
+        }
+
+        .legend-color {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            margin-right: 15px;
+            border: 2px solid white;
+        }
+
+        .legend-text {
+            font-size: 1em;
+        }
+
+        .path-arrow {
+            position: absolute;
+            color: rgba(255,255,255,0.6);
+            font-size: 24px;
+            z-index: 10;
+            animation: pulse 2s infinite;
+        }
+
+        .arrow-1 {
+            top: 300px;
+            left: 275px;
+        }
+
+        .arrow-2 {
+            top: 400px;
+            left: 225px;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.6; }
+            50% { opacity: 1; }
+        }
+
+        .info-panel {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0,0,0,0.9);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            max-width: 450px;
+            display: none;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .info-panel h3 {
+            color: #00d2d3;
+            margin-bottom: 15px;
+        }
+
+        .info-panel p {
+            margin-bottom: 10px;
+            line-height: 1.5;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        .close-btn:hover {
+            color: #ff6b6b;
+        }
+
+        @media (max-width: 768px) {
+            .spheres-container {
+                width: 400px;
+                height: 400px;
+            }
+            
+            .sphere-analytics { width: 350px; height: 350px; top: 25px; left: 25px; }
+            .sphere-governance { width: 245px; height: 245px; top: 77px; left: 77px; }
+            .sphere-platform { width: 140px; height: 140px; top: 130px; left: 130px; }
+            
+            h1 { font-size: 2em; }
+            .subtitle { font-size: 1em; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 SPHERED Data Engineering</h1>
+        <div class="subtitle">Arquitectura de Datos Empresarial - 3 Capas Estratégicas</div>
+    </div>
+
+    <div class="spheres-container">
+        <!-- Esfera más externa - Modelos Analíticos Avanzados -->
+        <div class="sphere sphere-analytics" onclick="showInfo('analytics')">
+            <div class="sphere-content">
+                <div class="sphere-title">📊 SPHERED</div>
+                <div class="sphere-subtitle">INTELLIGENCE</div>
+                <div class="sphere-description">Analytics Avanzado</div>
+            </div>
+        </div>
+
+        <!-- Esfera intermedia - Gobernanza y Linaje -->
+        <div class="sphere sphere-governance" onclick="showInfo('governance')">
+            <div class="sphere-content">
+                <div class="sphere-title">🛡️ SPHERED</div>
+                <div class="sphere-subtitle">GOVERNANCE</div>
+                <div class="sphere-description">Gobierno & Linaje</div>
+            </div>
+        </div>
+
+        <!-- Esfera central - Plataforma de Datos -->
+        <div class="sphere sphere-platform" onclick="showInfo('platform')">
+            <div class="sphere-content">
+                <div class="sphere-title">🏗️ SPHERED</div>
+                <div class="sphere-subtitle">PLATFORM</div>
+                <div class="sphere-description">Plataforma de Datos</div>
+            </div>
+        </div>
+
+        <!-- Flechas de progresión -->
+        <div class="path-arrow arrow-1">→</div>
+        <div class="path-arrow arrow-2">→</div>
+    </div>
+
+    <div class="legend">
+        <h3>🎯 Arquitectura de 3 Capas</h3>
+        <div class="legend-item">
+            <div class="legend-color" style="background: #32cd32;"></div>
+            <div class="legend-text"><strong>PLATAFORMA DE DATOS:</strong> ETL, Data Lake Medallion, Modelo Semántico</div>
+        </div>
+        <div class="legend-item">
+            <div class="legend-color" style="background: #00d2d3;"></div>
+            <div class="legend-text"><strong>GOBERNANZA & LINAJE:</strong> Catálogo, Trazabilidad, Compliance</div>
+        </div>
+        <div class="legend-item">
+            <div class="legend-color" style="background: #ff6b6b;"></div>
+            <div class="legend-text"><strong>INTELLIGENCE:</strong> KPIs, Predicciones, Alertas, Modelos Avanzados</div>
+        </div>
+    </div>
+
+    <!-- Panel de información -->
+    <div class="info-panel" id="infoPanel">
+        <button class="close-btn" onclick="hideInfo()">×</button>
+        <div id="infoContent"></div>
+    </div>
+
+    <script>
+        const sphereInfo = {
+            platform: {
+                title: "🏗️ SPHERED PLATFORM",
+                description: "La base sólida de tu arquitectura de datos",
+                details: [
+                    "• Extracción desde ERP (SAP, Oracle, Dynamics, Odoo)",
+                    "• Ingesta en Data Lake con arquitectura Medallion",
+                    "• Landing → Bronze → Silver → Gold",
+                    "• Modelo semántico para Power BI",
+                    "• ETL automatizado con Microsoft Fabric",
+                    "• ROI: Fundación para toda la estrategia de datos"
+                ]
+            },
+            governance: {
+                title: "🛡️ SPHERED GOVERNANCE",
+                description: "Gobierno, linaje y compliance de datos",
+                details: [
+                    "• Catálogo de datos completo y actualizado",
+                    "• Linaje de datos end-to-end",
+                    "• Trazabilidad de transformaciones",
+                    "• Control de acceso basado en roles (RBAC)",
+                    "• Compliance GDPR y auditoría completa",
+                    "• Metadatos empresariales y business glossary",
+                    "• ROI: Confianza, compliance y gobernanza"
+                ]
+            },
+            analytics: {
+                title: "📊 SPHERED INTELLIGENCE",
+                description: "Analytics avanzado y modelos predictivos",
+                details: [
+                    "• KPIs ejecutivos en tiempo real",
+                    "• Dashboards Power BI interactivos",
+                    "• Modelos predictivos y forecasting",
+                    "• Alertas inteligentes y proactivas",
+                    "• Análisis de tendencias y patrones",
+                    "• Machine Learning para insights",
+                    "• ROI: Ventaja competitiva y decisiones inteligentes"
+                ]
+            }
+        };
+
+        function showInfo(sphereType) {
+            const info = sphereInfo[sphereType];
+            const content = document.getElementById('infoContent');
+            
+            content.innerHTML = `
+                <h3>${info.title}</h3>
+                <p><em>${info.description}</em></p>
+                <div style="margin-top: 20px;">
+                    ${info.details.map(detail => `<p style="margin: 8px 0; font-size: 0.9em;">${detail}</p>`).join('')}
+                </div>
+            `;
+            
+            document.getElementById('infoPanel').style.display = 'block';
+        }
+
+        function hideInfo() {
+            document.getElementById('infoPanel').style.display = 'none';
+        }
+
+        // Cerrar panel al hacer clic fuera
+        document.addEventListener('click', function(event) {
+            const panel = document.getElementById('infoPanel');
+            if (event.target === panel) {
+                hideInfo();
+            }
+        });
+
+        // Animación de entrada para las esferas
+        window.addEventListener('load', function() {
+            const spheres = document.querySelectorAll('.sphere');
+            spheres.forEach((sphere, index) => {
+                setTimeout(() => {
+                    sphere.style.opacity = '0';
+                    sphere.style.transform = 'scale(0.5)';
+                    sphere.style.transition = 'all 0.8s ease';
+                    
+                    setTimeout(() => {
+                        sphere.style.opacity = '1';
+                        sphere.style.transform = 'scale(1)';
+                    }, 100);
+                }, index * 300);
+            });
+        });
+    </script>
+</body>
+</html>
