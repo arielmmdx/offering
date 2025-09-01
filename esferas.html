@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esferas Concéntricas - Data Engineering SPHERED</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .container {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            color: white;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .subtitle {
+            color: #f0f0f0;
+            font-size: 1.2em;
+            margin-bottom: 20px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+
+        .spheres-container {
+            position: relative;
+            width: 600px;
+            height: 600px;
+            margin: 0 auto;
+        }
+
+        .sphere {
+            position: absolute;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .sphere:hover {
+            transform: scale(1.05);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.4);
+        }
+
+        /* Esfera más externa - IA */
+        .sphere-ai {
+            width: 500px;
+            height: 500px;
+            top: 50px;
+            left: 50px;
+            background: radial-gradient(circle, #ff6b6b, #ee5a52);
+            border: 4px solid #fff;
+            font-size: 1.8em;
+            z-index: 1;
+        }
+
+        /* Esfera intermedia - Analytics */
+        .sphere-analytics {
+            width: 400px;
+            height: 400px;
+            top: 100px;
+            left: 100px;
+            background: radial-gradient(circle, #00d2d3, #00b8b9);
+            border: 3px solid #fff;
+            font-size: 1.6em;
+            z-index: 2;
+        }
+
+        /* Esfera intermedia - Visualización */
+        .sphere-visualization {
+            width: 300px;
+            height: 300px;
+            top: 150px;
+            left: 150px;
+            background: radial-gradient(circle, #32cd32, #28a428);
+            border: 3px solid #fff;
+            font-size: 1.4em;
+            z-index: 3;
+        }
+
+        /* Esfera intermedia - Gobernanza */
+        .sphere-governance {
+            width: 250px;
+            height: 250px;
+            top: 175px;
+            left: 175px;
+            background: radial-gradient(circle, #556b2f, #4a5d28);
+            border: 3px solid #fff;
+            font-size: 1.2em;
+            z-index: 4;
+        }
+
+        /* Esfera intermedia - Calidad */
+        .sphere-quality {
+            width: 200px;
+            height: 200px;
+            top: 200px;
+            left: 200px;
+            background: radial-gradient(circle, #6b8e23, #5a7a1e);
+            border: 3px solid #fff;
+            font-size: 1.1em;
+            z-index: 5;
+        }
+
+        /* Esfera central - Fundación */
+        .sphere-foundation {
+            width: 150px;
+            height: 150px;
+            top: 225px;
+            left: 225px;
+            background: radial-gradient(circle, #2f4f4f, #1a2a2a);
+            border: 3px solid #fff;
+            font-size: 1em;
+            z-index: 6;
+        }
+
+        .sphere-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+        }
+
+        .sphere-title {
+            font-size: 0.9em;
+            margin-bottom: 5px;
+            font-weight: 900;
+        }
+
+        .sphere-subtitle {
+            font-size: 0.7em;
+            opacity: 0.9;
+            font-weight: 600;
+        }
+
+        .sphere-description {
+            font-size: 0.6em;
+            opacity: 0.8;
+            margin-top: 5px;
+        }
+
+        .legend {
+            margin-top: 40px;
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .legend h3 {
+            color: white;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+            color: white;
+        }
+
+        .legend-color {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            margin-right: 15px;
+            border: 2px solid white;
+        }
+
+        .legend-text {
+            font-size: 1em;
+        }
+
+        .path-arrow {
+            position: absolute;
+            color: rgba(255,255,255,0.6);
+            font-size: 24px;
+            z-index: 10;
+            animation: pulse 2s infinite;
+        }
+
+        .arrow-1 {
+            top: 280px;
+            left: 350px;
+        }
+
+        .arrow-2 {
+            top: 330px;
+            left: 300px;
+        }
+
+        .arrow-3 {
+            top: 380px;
+            left: 250px;
+        }
+
+        .arrow-4 {
+            top: 430px;
+            left: 200px;
+        }
+
+        .arrow-5 {
+            top: 480px;
+            left: 150px;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.6; }
+            50% { opacity: 1; }
+        }
+
+        .info-panel {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0,0,0,0.9);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            max-width: 400px;
+            display: none;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .info-panel h3 {
+            color: #00d2d3;
+            margin-bottom: 15px;
+        }
+
+        .info-panel p {
+            margin-bottom: 10px;
+            line-height: 1.5;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        .close-btn:hover {
+            color: #ff6b6b;
+        }
+
+        @media (max-width: 768px) {
+            .spheres-container {
+                width: 400px;
+                height: 400px;
+            }
+            
+            .sphere-ai { width: 350px; height: 350px; top: 25px; left: 25px; }
+            .sphere-analytics { width: 280px; height: 280px; top: 60px; left: 60px; }
+            .sphere-visualization { width: 210px; height: 210px; top: 95px; left: 95px; }
+            .sphere-governance { width: 175px; height: 175px; top: 112px; left: 112px; }
+            .sphere-quality { width: 140px; height: 140px; top: 130px; left: 130px; }
+            .sphere-foundation { width: 105px; height: 105px; top: 147px; left: 147px; }
+            
+            h1 { font-size: 2em; }
+            .subtitle { font-size: 1em; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 SPHERED Data Engineering</h1>
+        <div class="subtitle">Camino de Crecimiento desde Datos Básicos hasta IA Avanzada</div>
+    </div>
+
+    <div class="spheres-container">
+        <!-- Esfera más externa - IA -->
+        <div class="sphere sphere-ai" onclick="showInfo('ai')">
+            <div class="sphere-content">
+                <div class="sphere-title">🤖 SPHERED</div>
+                <div class="sphere-subtitle">INTELLIGENCE</div>
+                <div class="sphere-description">IA Completa</div>
+            </div>
+        </div>
+
+        <!-- Esfera intermedia - Analytics -->
+        <div class="sphere sphere-analytics" onclick="showInfo('analytics')">
+            <div class="sphere-content">
+                <div class="sphere-title">📊 SPHERED</div>
+                <div class="sphere-subtitle">ANALYTICS</div>
+                <div class="sphere-description">Predictivo</div>
+            </div>
+        </div>
+
+        <!-- Esfera intermedia - Visualización -->
+        <div class="sphere sphere-visualization" onclick="showInfo('visualization')">
+            <div class="sphere-content">
+                <div class="sphere-title">📈 SPHERED</div>
+                <div class="sphere-subtitle">VISUALIZATION</div>
+                <div class="sphere-description">Power BI</div>
+            </div>
+        </div>
+
+        <!-- Esfera intermedia - Gobernanza -->
+        <div class="sphere sphere-governance" onclick="showInfo('governance')">
+            <div class="sphere-content">
+                <div class="sphere-title">🛡️ SPHERED</div>
+                <div class="sphere-subtitle">GOVERNANCE</div>
+                <div class="sphere-description">Seguridad</div>
+            </div>
+        </div>
+
+        <!-- Esfera intermedia - Calidad -->
+        <div class="sphere sphere-quality" onclick="showInfo('quality')">
+            <div class="sphere-content">
+                <div class="sphere-title">⚙️ SPHERED</div>
+                <div class="sphere-subtitle">QUALITY</div>
+                <div class="sphere-description">Transformación</div>
+            </div>
+        </div>
+
+        <!-- Esfera central - Fundación -->
+        <div class="sphere sphere-foundation" onclick="showInfo('foundation')">
+            <div class="sphere-content">
+                <div class="sphere-title">🏗️ SPHERED</div>
+                <div class="sphere-subtitle">FOUNDATION</div>
+                <div class="sphere-description">Datos</div>
+            </div>
+        </div>
+
+        <!-- Flechas de progresión -->
+        <div class="path-arrow arrow-1">→</div>
+        <div class="path-arrow arrow-2">→</div>
+        <div class="path-arrow arrow-3">→</div>
+        <div class="path-arrow arrow-4">→</div>
+        <div class="path-arrow arrow-5">→</div>
+    </div>
+
+    <div class="legend">
+        <h3>🎯 Camino de Crecimiento</h3>
+        <div class="legend-item">
+            <div class="legend-color" style="background: #2f4f4f;"></div>
+            <div class="legend-text"><strong>FUNDACIÓN:</strong> Extracción, ETL básico, Data Lake</div>
+        </div>
+        <div class="legend-item">
+            <div class="legend-color" style="background: #6b8e23;"></div>
+            <div class="legend-text"><strong>CALIDAD:</strong> Limpieza, validación, transformaciones</div>
+        </div>
+        <div class="legend-item">
+            <div class="legend-color" style="background: #556b2f;"></div>
+            <div class="legend-text"><strong>GOBERNANZA:</strong> Catálogo, linaje, compliance</div>
+        </div>
+        <div class="legend-item">
+            <div class="legend-color" style="background: #32cd32;"></div>
+            <div class="legend-text"><strong>VISUALIZACIÓN:</strong> Power BI, dashboards, KPIs</div>
+        </div>
+        <div class="legend-item">
+            <div class="legend-color" style="background: #00d2d3;"></div>
+            <div class="legend-text"><strong>ANALYTICS:</strong> Predicciones, alertas, forecasting</div>
+        </div>
+        <div class="legend-item">
+            <div class="legend-color" style="background: #ff6b6b;"></div>
+            <div class="legend-text"><strong>IA:</strong> Machine Learning, chatbots, automatización</div>
+        </div>
+    </div>
+
+    <!-- Panel de información -->
+    <div class="info-panel" id="infoPanel">
+        <button class="close-btn" onclick="hideInfo()">×</button>
+        <div id="infoContent"></div>
+    </div>
+
+    <script>
+        const sphereInfo = {
+            foundation: {
+                title: "🏗️ SPHERED FOUNDATION",
+                description: "La base de tu transformación digital",
+                details: [
+                    "• Extracción de datos de fuentes básicas (Excel, CSV, APIs)",
+                    "• Creación de tablas y estructura básica",
+                    "• Almacenamiento en Data Lake",
+                    "• Metadatos iniciales",
+                    "• Tiempo: 2-4 semanas",
+                    "• ROI: Inmediato - datos organizados y accesibles"
+                ]
+            },
+            quality: {
+                title: "⚙️ SPHERED QUALITY",
+                description: "Hacemos que tus datos sean confiables",
+                details: [
+                    "• Limpieza y validación automática de datos",
+                    "• Transformaciones ETL avanzadas",
+                    "• Modelado dimensional básico",
+                    "• Data marts iniciales",
+                    "• Tiempo: 3-5 semanas adicionales",
+                    "• ROI: Decisiones más precisas"
+                ]
+            },
+            governance: {
+                title: "🛡️ SPHERED GOVERNANCE",
+                description: "Protegemos y gobernamos tus datos",
+                details: [
+                    "• Catálogo de datos completo",
+                    "• Linaje de datos y trazabilidad",
+                    "• Control de acceso basado en roles (RBAC)",
+                    "• Compliance GDPR y auditoría",
+                    "• Tiempo: 4-6 semanas adicionales",
+                    "• ROI: Evita multas, genera confianza"
+                ]
+            },
+            visualization: {
+                title: "📈 SPHERED VISUALIZATION",
+                description: "Convertimos datos en insights visuales",
+                details: [
+                    "• Dashboards Power BI ejecutivos",
+                    "• KPIs en tiempo real",
+                    "• Self-service BI para usuarios",
+                    "• Reportes automatizados",
+                    "• Tiempo: 3-4 semanas adicionales",
+                    "• ROI: Decisiones más rápidas"
+                ]
+            },
+            analytics: {
+                title: "📊 SPHERED ANALYTICS",
+                description: "Predicciones y análisis avanzados",
+                details: [
+                    "• KPIs predictivos y forecasting",
+                    "• Alertas inteligentes",
+                    "• Análisis de tendencias",
+                    "• Recomendaciones automáticas",
+                    "• Tiempo: 4-6 semanas adicionales",
+                    "• ROI: Ventaja competitiva"
+                ]
+            },
+            ai: {
+                title: "🤖 SPHERED INTELLIGENCE",
+                description: "El futuro de tu negocio con IA",
+                details: [
+                    "• Machine Learning predictivo",
+                    "• IA Generativa y chatbots",
+                    "• Automatización prescriptiva",
+                    "• MLOps y gestión de modelos",
+                    "• Tiempo: 6-8 semanas adicionales",
+                    "• ROI: Diferenciación total"
+                ]
+            }
+        };
+
+        function showInfo(sphereType) {
+            const info = sphereInfo[sphereType];
+            const content = document.getElementById('infoContent');
+            
+            content.innerHTML = `
+                <h3>${info.title}</h3>
+                <p><em>${info.description}</em></p>
+                <div style="margin-top: 20px;">
+                    ${info.details.map(detail => `<p style="margin: 8px 0; font-size: 0.9em;">${detail}</p>`).join('')}
+                </div>
+            `;
+            
+            document.getElementById('infoPanel').style.display = 'block';
+        }
+
+        function hideInfo() {
+            document.getElementById('infoPanel').style.display = 'none';
+        }
+
+        // Cerrar panel al hacer clic fuera
+        document.addEventListener('click', function(event) {
+            const panel = document.getElementById('infoPanel');
+            if (event.target === panel) {
+                hideInfo();
+            }
+        });
+
+        // Animación de entrada para las esferas
+        window.addEventListener('load', function() {
+            const spheres = document.querySelectorAll('.sphere');
+            spheres.forEach((sphere, index) => {
+                setTimeout(() => {
+                    sphere.style.opacity = '0';
+                    sphere.style.transform = 'scale(0.5)';
+                    sphere.style.transition = 'all 0.8s ease';
+                    
+                    setTimeout(() => {
+                        sphere.style.opacity = '1';
+                        sphere.style.transform = 'scale(1)';
+                    }, 100);
+                }, index * 200);
+            });
+        });
+    </script>
+</body>
+</html>
