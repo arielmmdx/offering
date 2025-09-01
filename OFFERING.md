@@ -510,7 +510,7 @@ gantt
     title Roadmap de Implementación SPHERED
     dateFormat  YYYY-MM-DD
     section Fase 1: Discovery
-    Data Health Check           :done, health, 2024-01-01, 5d
+    Data Health Check           :done, health, 2025-07-01, 5d
     Data Assessment Express     :done, assessment, after health, 14d
     section Fase 2: MVP
     MVP Plataforma/Gobierno     :active, mvp, after assessment, 42d
