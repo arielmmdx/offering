@@ -202,18 +202,11 @@ graph TB
 - **Tableau** para enterprises con inversión legacy
 - **Microsoft Fabric** solo en ecosistemas Microsoft puros
 
-**Tecnologías que EVITAMOS y por qué:**
-- **Palantir**: Over-engineering para PMEs, TCO prohibitivo
-- **Informatica**: Legacy, licenciamiento complejo
-- **Oracle Analytics**: Vendor lock-in agresivo
-- **IBM Watson**: Sunset mode, pocas actualizaciones
-- **Teradata**: On-premise legacy, no cloud-native
-
 **Nuestro principio: "La tecnología aburrida gana" - Conjunto maduro, comunidad activa, hoja de ruta pública.**
 
 *Comentario técnico: Esta transparencia tecnológica nos diferencia. Las PMEs quieren saber CON QUÉ van a trabajar, no promesas vagas. Especificamos tier 1 vs tier 2 para generar confianza y demostrar expertise real.*
 
-*Comentario crítico: Aquí está el diferencial clave. El mercado se está moviendo hacia arquitecturas híbridas - 78% de organizaciones prefieren multi-cloud. Data Mesh vs Data Fabric es LA decisión estratégica del momento. Recomiendo especificar cuándo recomendar cada uno. FinOps es tendencia explosiva - mercado de $5.5B creciendo 34.8% CAGR. Para PMEs, enfócate en "ahorro inmediato del 20-30% en costes cloud" para captar atención.*
+*Comentario crítico: Aquí está el diferencial clave. El mercado se está moviendo hacia arquitecturas híbridas - 78% de organizaciones prefieren multi-cloud. Data Mesh vs Data Fabric es LA decisión estratégica del momento. Recomiendo especificar cuándo recomendar cada uno. FinOps es tendencia explosiva - mercado de $5.5B creciendo 34.8% CAGR. Para PMEs, enfócate en "ahorro inmediato en costes cloud" para captar atención.*
 
 ### ESTRATEGIA CLOUD: NUESTRA RECOMENDACIÓN JERARQUIZADA
 
